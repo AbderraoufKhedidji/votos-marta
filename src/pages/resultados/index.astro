@@ -1,34 +1,44 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { listCategoriesWithVotes } from '../../lib/db.mjs';
 
 export const prerender = false;
-
-let categories = [];
-try {
-  categories = await listCategoriesWithVotes();
-} catch (e) {
-  console.error('Error listando categorías con votos:', e);
-}
 ---
 <Base title="Resultados · Votos Marta">
   <h1 class="text-2xl font-bold mb-1">Resultados</h1>
   <p class="text-[var(--muted)] text-sm mb-6">Puntuaciones de cada categoría.</p>
 
-  {categories.length === 0 ? (
-    <p class="text-[var(--muted)]">Todavía no hay categorías.</p>
-  ) : (
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {categories.map((c) => (
-        <a href={`/resultados/${c.id}`} class="card p-5 hover:border-[var(--accent)] transition">
-          <h3 class="font-bold text-lg">{c.name}</h3>
-          {c.description && <p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">{c.description}</p>}
-          <div class="flex gap-2 mt-3">
-            <span class="badge">{c.actor_count} actores</span>
-            <span class="badge">{c.vote_count} votos</span>
-          </div>
-        </a>
-      ))}
-    </div>
-  )}
+  <div id="cats" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <p class="text-[var(--muted)]">Cargando…</p>
+  </div>
 </Base>
+
+<script>
+  import { listCategoriesWithVotes } from '../../lib/storage.js';
+
+  function escapeHtml(s) {
+    return String(s ?? '').replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+  }
+
+  function render() {
+    const el = document.getElementById('cats');
+    const cats = listCategoriesWithVotes();
+    if (cats.length === 0) {
+      el.innerHTML = '<p class="text-[var(--muted)]">Todavía no hay categorías.</p>';
+      return;
+    }
+    el.innerHTML = cats.map((c) => `
+      <a href="/resultados/${c.id}" class="card p-5 hover:border-[var(--accent)] transition">
+        <h3 class="font-bold text-lg">${escapeHtml(c.name)}</h3>
+        ${c.description ? `<p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">${escapeHtml(c.description)}</p>` : ''}
+        <div class="flex gap-2 mt-3">
+          <span class="badge">${c.actor_count} actores</span>
+          <span class="badge">${c.vote_count} votos</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  render();
+</script>

@@ -1,58 +1,66 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCategory, listActors } from '../../lib/db.mjs';
 
 export const prerender = false;
 
-const id = Number(Astro.params.id);
-let category = null;
-let actors = [];
-try {
-  category = await getCategory(id);
-  if (category) {
-    actors = await listActors(id);
-    // Ordenar por media desc
-    actors = [...actors].sort((a, b) => (b.avg_score || 0) - (a.avg_score || 0) || (b.vote_count || 0) - (a.vote_count || 0));
-  }
-} catch (e) {
-  console.error('Error cargando resultados:', e);
-}
-if (!category) {
-  return Astro.redirect('/resultados');
-}
+const id = Astro.params.id;
 ---
-<Base title={`${category.name} · Resultados`}>
+<Base title="Resultados · Votos Marta">
   <a href="/resultados" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
-  <h1 class="text-2xl font-bold mt-2">{category.name}</h1>
-  {category.description && <p class="text-[var(--muted)] text-sm mt-1 mb-6">{category.description}</p>}
+  <div id="root"></div>
+</Base>
 
-  {actors.length === 0 ? (
-    <p class="text-[var(--muted)]">Sin actores todavía.</p>
-  ) : (
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {actors.map((a, i) => (
+<script>
+  import { getCategory, listActors } from '../../lib/storage.js';
+
+  const id = new URLSearchParams(location.search).get('id') || location.pathname.split('/').pop();
+
+  function escapeHtml(s) {
+    return String(s ?? '').replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+  }
+
+  function render() {
+    const el = document.getElementById('root');
+    const category = getCategory(id);
+    if (!category) {
+      location.href = '/resultados';
+      return;
+    }
+    let actors = listActors(id);
+    actors = [...actors].sort((a, b) => (b.avg_score || 0) - (a.avg_score || 0) || (b.vote_count || 0) - (a.vote_count || 0));
+
+    const cards = actors.length === 0
+      ? '<p class="text-[var(--muted)]">Sin actores todavía.</p>'
+      : `<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-4">` + actors.map((a, i) => `
         <div class="card p-4 flex gap-4">
           <div class="w-20 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-[var(--panel-2)]">
-            {a.photo_url ? (
-              <img src={a.photo_url} alt={a.name} class="w-full h-full object-cover" />
-            ) : (
-              <div class="w-full h-full flex items-center justify-center text-[var(--muted)] text-xs">Sin foto</div>
-            )}
+            ${a.photo_url
+              ? `<img src="${escapeHtml(a.photo_url)}" alt="${escapeHtml(a.name)}" class="w-full h-full object-cover" />`
+              : `<div class="w-full h-full flex items-center justify-center text-[var(--muted)] text-xs">Sin foto</div>`}
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
-              {i === 0 && a.vote_count > 0 && <span class="badge" style="color: #fbbf24; border-color:#fbbf24;">#1</span>}
-              <h3 class="font-bold leading-tight truncate">{a.name}</h3>
+              ${i === 0 && a.vote_count > 0 ? `<span class="badge" style="color: #fbbf24; border-color:#fbbf24;">#1</span>` : ''}
+              <h3 class="font-bold leading-tight truncate">${escapeHtml(a.name)}</h3>
             </div>
-            {a.role && <p class="text-[var(--muted)] text-sm truncate">{a.role}</p>}
+            ${a.role ? `<p class="text-[var(--muted)] text-sm truncate">${escapeHtml(a.role)}</p>` : ''}
             <div class="flex gap-2 mt-2 flex-wrap">
-              <span class="badge">{a.vote_count} votos</span>
-              {a.vote_count > 0 && <span class="badge" style="color: var(--accent);">⭐ {Number(a.avg_score).toFixed(1)}</span>}
+              <span class="badge">${a.vote_count} votos</span>
+              ${a.vote_count > 0 ? `<span class="badge" style="color: var(--accent);">⭐ ${Number(a.avg_score).toFixed(1)}</span>` : ''}
             </div>
-            <a href={`/votar/${a.id}`} class="btn btn-primary text-xs py-1 px-2 mt-3 inline-flex">Ver votación en directo</a>
+            <a href="/votar/${a.id}" class="btn btn-primary text-xs py-1 px-2 mt-3 inline-flex">Ver votación en directo</a>
           </div>
         </div>
-      ))}
-    </div>
-  )}
-</Base>
+      `).join('') + `</div>`;
+
+    el.innerHTML = `
+      <h1 class="text-2xl font-bold mt-2">${escapeHtml(category.name)}</h1>
+      ${category.description ? `<p class="text-[var(--muted)] text-sm mt-1 mb-2">${escapeHtml(category.description)}</p>` : ''}
+      ${cards}
+    `;
+  }
+
+  render();
+</script>

@@ -15,10 +15,21 @@ let client;
 let isLocal = false;
 if (TURSO_URL) {
   client = createClient({ url: TURSO_URL, authToken: TURSO_TOKEN || undefined });
+} else if (process.env.VERCEL) {
+  // En Vercel el sistema de archivos es de solo lectura: el modo SQLite local
+  // no funciona. Se requiere configurar Turso (TURSO_DATABASE_URL + TURSO_AUTH_TOKEN).
+  throw new Error(
+    '[votos-marta] Falta la configuración de Turso. Añade las variables de entorno ' +
+      'TURSO_DATABASE_URL y TURSO_AUTH_TOKEN en Vercel (Project > Settings > Environment Variables).'
+  );
 } else {
   isLocal = true;
   const localFile = resolve(__dirname, '..', '..', 'data', 'votos.db');
-  mkdirSync(dirname(localFile), { recursive: true });
+  try {
+    mkdirSync(dirname(localFile), { recursive: true });
+  } catch (e) {
+    throw new Error(`[votos-marta] No se pudo crear el directorio de la base de datos local (${dirname(localFile)}): ${e.message}`);
+  }
   client = createClient({ url: `file:${localFile}` });
 }
 

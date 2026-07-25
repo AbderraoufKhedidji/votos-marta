@@ -7,7 +7,7 @@ export const prerender = false;
   <div class="max-w-lg">
     <a href="/admin" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
     <h1 class="text-2xl font-bold mt-2 mb-6">Nueva categoría</h1>
-    <form action="/api/categorias" method="POST" class="card p-6 space-y-4">
+    <form id="form" class="card p-6 space-y-4">
       <div>
         <label class="label" for="name">Nombre</label>
         <input class="input" id="name" name="name" type="text" required placeholder="Ej: Protagonistas" />
@@ -23,3 +23,17 @@ export const prerender = false;
     </form>
   </div>
 </Base>
+
+<script>
+  import { createCategory } from '../../../lib/storage.js';
+
+  document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = String(fd.get('name') || '').trim();
+    const description = String(fd.get('description') || '').trim();
+    if (!name) return;
+    const cat = createCategory(name, description);
+    location.href = `/admin/categorias/${cat.id}`;
+  });
+</script>

@@ -1,30 +1,53 @@
 ---
 import Base from '../../../../layouts/Base.astro';
-import { getCategory } from '../../../../lib/db.mjs';
 
 export const prerender = false;
 
-const id = Number(Astro.params.id);
-const category = await getCategory(id);
-if (!category) {
-  return Astro.redirect('/admin');
-}
+const id = Astro.params.id;
 ---
-<Base title={`Editar · ${category.name}`} authed>
-  <a href={`/admin/categorias/${id}`} class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
-  <h1 class="text-2xl font-bold mt-2 mb-6">Editar categoría</h1>
-  <form action={`/api/categorias/${id}?_method=PUT`} method="POST" class="card p-6 space-y-4 max-w-lg">
-    <div>
-      <label class="label" for="name">Nombre</label>
-      <input class="input" id="name" name="name" type="text" required value={category.name} />
-    </div>
-    <div>
-      <label class="label" for="description">Descripción</label>
-      <textarea class="textarea" id="description" name="description" rows="3">{category.description ?? ''}</textarea>
-    </div>
-    <div class="flex gap-2 justify-end">
-      <a href={`/admin/categorias/${id}`} class="btn">Cancelar</a>
-      <button class="btn btn-primary" type="submit">Guardar</button>
-    </div>
-  </form>
+<Base title="Editar categoría · Votos Marta" authed>
+  <div class="max-w-lg">
+    <a id="back" href="/admin" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
+    <h1 class="text-2xl font-bold mt-2 mb-6">Editar categoría</h1>
+    <form id="form" class="card p-6 space-y-4">
+      <div>
+        <label class="label" for="name">Nombre</label>
+        <input class="input" id="name" name="name" type="text" required />
+      </div>
+      <div>
+        <label class="label" for="description">Descripción</label>
+        <textarea class="textarea" id="description" name="description" rows="3"></textarea>
+      </div>
+      <div class="flex gap-2 justify-end">
+        <a id="cancel" href="/admin" class="btn">Cancelar</a>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
 </Base>
+
+<script>
+  import { getCategory, updateCategory } from '../../../../lib/storage.js';
+
+  const id = location.pathname.split('/').filter(Boolean)[2];
+
+  const cat = getCategory(id);
+  if (!cat) {
+    location.href = '/admin';
+  } else {
+    document.getElementById('back').href = `/admin/categorias/${id}`;
+    document.getElementById('cancel').href = `/admin/categorias/${id}`;
+    document.getElementById('name').value = cat.name || '';
+    document.getElementById('description').value = cat.description || '';
+  }
+
+  document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = String(fd.get('name') || '').trim();
+    const description = String(fd.get('description') || '').trim();
+    if (!name) return;
+    updateCategory(id, name, description);
+    location.href = `/admin/categorias/${id}`;
+  });
+</script>

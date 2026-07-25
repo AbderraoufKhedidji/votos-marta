@@ -6,14 +6,12 @@ const PUBLIC_PATHS = [
   '/login',
   '/api/login',
   '/resultados',
-  '/api/votes',
 ];
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url;
 
   // Permitir assets estáticos y rutas internas de Vite en dev
-  // (en producción el JS bundleado se sirve desde /_astro/)
   if (
     pathname.startsWith('/_astro/') ||
     pathname.startsWith('/favicon') ||
@@ -33,10 +31,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const isPublic =
     PUBLIC_PATHS.includes(pathname) ||
     pathname.startsWith('/resultados/') ||
-    pathname.startsWith('/votar/') ||
-    pathname.startsWith('/api/vote') ||
-    pathname.startsWith('/api/votos/') ||
-    pathname.startsWith('/uploads/');
+    pathname.startsWith('/votar/');
 
   if (isPublic) {
     return next();

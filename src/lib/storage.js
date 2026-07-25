@@ -1,0 +1,273 @@
+// Capa de datos basada en localStorage (sin servidor, sin DB).
+// Toda la información vive en el navegador. Funciona en Vercel sin variables
+// de entorno ni sistema de archivos escribible.
+
+const KEYS = {
+  categories: 'vm:categories',
+  actors: 'vm:actors',
+  votes: 'vm:votes',
+  settings: 'vm:settings',
+  seeded: 'vm:seeded',
+};
+
+import seedHollywood from '../../seeds/seed-hollywood.json';
+
+function read(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function write(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function nextId(list) {
+  return list.reduce((max, x) => Math.max(max, Number(x.id) || 0), 0) + 1;
+}
+
+function now() {
+  return new Date().toISOString();
+}
+
+// --- Seed inicial ---
+export function seedIfEmpty() {
+  const already = read(KEYS.seeded, false);
+  const cats = read(KEYS.categories, []);
+  if (already || cats.length > 0) return false;
+
+  const catId = nextId(cats);
+  const category = {
+    id: catId,
+    name: seedHollywood.category.name,
+    description: seedHollywood.category.description,
+    created_at: now(),
+  };
+  write(KEYS.categories, [category, ...cats]);
+
+  const actors = read(KEYS.actors, []);
+  const newActors = seedHollywood.actors.map((a, i) => ({
+    id: nextId(actors) + i,
+    category_id: catId,
+    name: a.name,
+    role: a.role ?? null,
+    photo_url: a.photo_url ?? null,
+    created_at: now(),
+  }));
+  write(KEYS.actors, [...newActors, ...actors]);
+  write(KEYS.seeded, true);
+  return true;
+}
+
+// --- Categorías ---
+export function listCategories() {
+  seedIfEmpty();
+  const cats = read(KEYS.categories, []);
+  const actors = read(KEYS.actors, []);
+  return cats
+    .map((c) => ({
+      ...c,
+      actor_count: actors.filter((a) => a.category_id === c.id).length,
+    }))
+    .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
+}
+
+export function listCategoriesWithVotes() {
+  seedIfEmpty();
+  const cats = read(KEYS.categories, []);
+  const actors = read(KEYS.actors, []);
+  const votes = read(KEYS.votes, []);
+  return cats
+    .map((c) => {
+      const catActors = actors.filter((a) => a.category_id === c.id);
+      const actorIds = new Set(catActors.map((a) => a.id));
+      const vote_count = votes.filter((v) => actorIds.has(v.actor_id)).length;
+      return {
+        ...c,
+        actor_count: catActors.length,
+        vote_count,
+      };
+    })
+    .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
+}
+
+export function getCategory(id) {
+  seedIfEmpty();
+  const cats = read(KEYS.categories, []);
+  return cats.find((c) => c.id === Number(id)) ?? null;
+}
+
+export function createCategory(name, description) {
+  const cats = read(KEYS.categories, []);
+  const cat = { id: nextId(cats), name, description: description || null, created_at: now() };
+  write(KEYS.categories, [cat, ...cats]);
+  return cat;
+}
+
+export function updateCategory(id, name, description) {
+  const cats = read(KEYS.categories, []);
+  const idx = cats.findIndex((c) => c.id === Number(id));
+  if (idx === -1) return null;
+  cats[idx] = { ...cats[idx], name, description: description || null };
+  write(KEYS.categories, cats);
+  return cats[idx];
+}
+
+export function deleteCategory(id) {
+  const idNum = Number(id);
+  const actors = read(KEYS.actors, []);
+  const actorIds = actors.filter((a) => a.category_id === idNum).map((a) => a.id);
+  write(KEYS.actors, actors.filter((a) => a.category_id !== idNum));
+  if (actorIds.length) {
+    const votes = read(KEYS.votes, []);
+    write(KEYS.votes, votes.filter((v) => !actorIds.includes(v.actor_id)));
+  }
+  write(KEYS.categories, read(KEYS.categories, []).filter((c) => c.id !== idNum));
+}
+
+// --- Actores ---
+export function listActors(categoryId) {
+  seedIfEmpty();
+  const actors = read(KEYS.actors, []);
+  const votes = read(KEYS.votes, []);
+  return actors
+    .filter((a) => a.category_id === Number(categoryId))
+    .map((a) => {
+      const v = votes.filter((x) => x.actor_id === a.id);
+      const total = v.length;
+      const sum = v.reduce((s, x) => s + Number(x.score), 0);
+      return {
+        ...a,
+        vote_count: total,
+        avg_score: total ? sum / total : 0,
+      };
+    })
+    .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
+}
+
+export function getActor(id) {
+  seedIfEmpty();
+  const actors = read(KEYS.actors, []);
+  return actors.find((a) => a.id === Number(id)) ?? null;
+}
+
+export function createActor(categoryId, name, role, photoUrl) {
+  const actors = read(KEYS.actors, []);
+  const actor = {
+    id: nextId(actors),
+    category_id: Number(categoryId),
+    name,
+    role: role || null,
+    photo_url: photoUrl || null,
+    created_at: now(),
+  };
+  write(KEYS.actors, [actor, ...actors]);
+  return actor;
+}
+
+export function updateActor(id, name, role, photoUrl) {
+  const actors = read(KEYS.actors, []);
+  const idx = actors.findIndex((a) => a.id === Number(id));
+  if (idx === -1) return null;
+  actors[idx] = {
+    ...actors[idx],
+    name,
+    role: role || null,
+    photo_url: photoUrl != null ? photoUrl : actors[idx].photo_url,
+  };
+  write(KEYS.actors, actors);
+  return actors[idx];
+}
+
+export function deleteActor(id) {
+  const idNum = Number(id);
+  write(KEYS.actors, read(KEYS.actors, []).filter((a) => a.id !== idNum));
+  write(KEYS.votes, read(KEYS.votes, []).filter((v) => v.actor_id !== idNum));
+}
+
+// --- Votos ---
+export function listVotesForActor(actorId) {
+  seedIfEmpty();
+  const votes = read(KEYS.votes, []);
+  return votes
+    .filter((v) => v.actor_id === Number(actorId))
+    .map((v) => ({ username: v.username, score: v.score }));
+}
+
+export function replaceVotesForActor(actorId, votes) {
+  const idNum = Number(actorId);
+  const all = read(KEYS.votes, []).filter((v) => v.actor_id !== idNum);
+  for (const { username, score } of votes) {
+    all.push({
+      id: nextId(all),
+      actor_id: idNum,
+      username: String(username).toLowerCase(),
+      score: Number(score),
+      created_at: now(),
+    });
+  }
+  write(KEYS.votes, all);
+  return votes.length;
+}
+
+export function getVoteStats(actorId) {
+  seedIfEmpty();
+  const actor = getActor(actorId);
+  const votes = read(KEYS.votes, []).filter((v) => v.actor_id === Number(actorId));
+  const distribution = Array(11).fill(0);
+  for (const v of votes) distribution[Number(v.score)] = (distribution[Number(v.score)] || 0) + 1;
+  const total = votes.length;
+  const sum = votes.reduce((s, v) => s + Number(v.score), 0);
+  return { actor, distribution, total, average: total ? sum / total : 0 };
+}
+
+// --- Actor activo (votación en curso) ---
+export function getActiveActorId() {
+  const s = read(KEYS.settings, {});
+  return s.active_actor_id ? Number(s.active_actor_id) : null;
+}
+
+export function setActiveActor(id) {
+  const s = read(KEYS.settings, {});
+  s.active_actor_id = Number(id);
+  write(KEYS.settings, s);
+}
+
+export function clearActiveActor() {
+  const s = read(KEYS.settings, {});
+  delete s.active_actor_id;
+  write(KEYS.settings, s);
+}
+
+export function getActiveActor() {
+  const id = getActiveActorId();
+  return id ? getActor(id) : null;
+}
+
+// --- Backup / restore ---
+export function exportData() {
+  return {
+    categories: read(KEYS.categories, []),
+    actors: read(KEYS.actors, []),
+    votes: read(KEYS.votes, []),
+    settings: read(KEYS.settings, {}),
+  };
+}
+
+export function importData(data) {
+  if (data?.categories) write(KEYS.categories, data.categories);
+  if (data?.actors) write(KEYS.actors, data.actors);
+  if (data?.votes) write(KEYS.votes, data.votes);
+  if (data?.settings) write(KEYS.settings, data.settings);
+}
+
+export function clearAll() {
+  localStorage.removeItem(KEYS.categories);
+  localStorage.removeItem(KEYS.actors);
+  localStorage.removeItem(KEYS.votes);
+  localStorage.removeItem(KEYS.settings);
+  localStorage.removeItem(KEYS.seeded);
+}

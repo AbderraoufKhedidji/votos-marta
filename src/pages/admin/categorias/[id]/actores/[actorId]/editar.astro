@@ -1,41 +1,96 @@
 ---
 import Base from '../../../../../../layouts/Base.astro';
-import { getCategory, getActor } from '../../../../../../lib/db.mjs';
 
 export const prerender = false;
 
-const categoryId = Number(Astro.params.id);
-const actorId = Number(Astro.params.actorId);
-const [category, actor] = await Promise.all([getCategory(categoryId), getActor(actorId)]);
-if (!category || !actor) {
-  return Astro.redirect('/admin');
-}
+const categoryId = Astro.params.id;
+const actorId = Astro.params.actorId;
 ---
-<Base title={`Editar · ${actor.name}`} authed>
-  <a href={`/admin/categorias/${categoryId}`} class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
-  <h1 class="text-2xl font-bold mt-2 mb-6">Editar actor</h1>
-  <form action={`/api/actores/${actorId}?_method=PUT`} method="POST" enctype="multipart/form-data" class="card p-6 space-y-4 max-w-lg">
-    <div>
-      <label class="label" for="name">Nombre</label>
-      <input class="input" id="name" name="name" type="text" required value={actor.name} />
-    </div>
-    <div>
-      <label class="label" for="role">Rol</label>
-      <input class="input" id="role" name="role" type="text" value={actor.role ?? ''} />
-    </div>
-    <div>
-      <label class="label" for="photo">Foto</label>
-      {actor.photo_url && (
-        <div class="mb-2">
-          <img src={actor.photo_url} alt={actor.name} class="w-24 h-28 rounded-lg object-cover" />
-        </div>
-      )}
-      <input class="input" id="photo" name="photo" type="file" accept="image/*" />
-      <p class="text-xs text-[var(--muted)] mt-1">Deja vacío para mantener la actual.</p>
-    </div>
-    <div class="flex gap-2 justify-end">
-      <a href={`/admin/categorias/${categoryId}`} class="btn">Cancelar</a>
-      <button class="btn btn-primary" type="submit">Guardar</button>
-    </div>
-  </form>
+<Base title="Editar actor · Votos Marta" authed>
+  <div class="max-w-lg">
+    <a id="back" href="/admin" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
+    <h1 class="text-2xl font-bold mt-2 mb-6">Editar actor</h1>
+    <form id="form" class="card p-6 space-y-4">
+      <div id="currentPhoto"></div>
+      <div>
+        <label class="label" for="name">Nombre</label>
+        <input class="input" id="name" name="name" type="text" required />
+      </div>
+      <div>
+        <label class="label" for="role">Rol</label>
+        <input class="input" id="role" name="role" type="text" />
+      </div>
+      <div>
+        <label class="label" for="photoUrl">Foto (URL)</label>
+        <input class="input" id="photoUrl" name="photoUrl" type="url" placeholder="https://..." />
+        <p class="text-xs text-[var(--muted)] mt-1">Cambia la URL para reemplazar la foto actual.</p>
+      </div>
+      <div>
+        <label class="label" for="photoFile">...o sube un archivo</label>
+        <input class="input" id="photoFile" name="photoFile" type="file" accept="image/*" />
+        <p class="text-xs text-[var(--muted)] mt-1">Deja vacío para mantener la actual.</p>
+      </div>
+      <div class="flex gap-2 justify-end">
+        <a id="cancel" href="/admin" class="btn">Cancelar</a>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
 </Base>
+
+<script>
+  import { getActor, updateActor } from '../../../../../../lib/storage.js';
+
+  const parts = location.pathname.split('/').filter(Boolean);
+  const categoryId = parts[2];
+  const actorId = parts[5];
+
+  const actor = getActor(actorId);
+  if (!actor) {
+    location.href = `/admin/categorias/${categoryId}`;
+  } else {
+    document.getElementById('back').href = `/admin/categorias/${categoryId}`;
+    document.getElementById('cancel').href = `/admin/categorias/${categoryId}`;
+    document.getElementById('name').value = actor.name || '';
+    document.getElementById('role').value = actor.role || '';
+    document.getElementById('photoUrl').value = (actor.photo_url && !actor.photo_url.startsWith('data:')) ? actor.photo_url : '';
+    if (actor.photo_url) {
+      document.getElementById('currentPhoto').innerHTML =
+        `<div class="mb-2"><img src="${actor.photo_url}" alt="${actor.name}" class="w-24 h-28 rounded-lg object-cover" /></div>`;
+    }
+  }
+
+  function fileToDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.onerror = reject;
+      r.readAsDataURL(file);
+    });
+  }
+
+  document.getElementById('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = String(fd.get('name') || '').trim();
+    const role = String(fd.get('role') || '').trim();
+    const url = String(fd.get('photoUrl') || '').trim();
+    const file = fd.get('photoFile');
+    if (!name) return;
+
+    let photoUrl = url || null;
+    if (file && file.size > 0) {
+      if (file.size > 1_500_000) {
+        alert('La imagen es demasiado grande (>1.5 MB). Usa una URL o una imagen más ligera.');
+        return;
+      }
+      photoUrl = await fileToDataUrl(file);
+    }
+
+    // Si no se rellenó URL ni archivo, mantener la actual
+    if (!photoUrl) photoUrl = actor.photo_url || null;
+
+    updateActor(actorId, name, role, photoUrl);
+    location.href = `/admin/categorias/${categoryId}`;
+  });
+</script>

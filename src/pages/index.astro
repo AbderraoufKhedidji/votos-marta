@@ -1,15 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import { listCategories } from '../lib/db.mjs';
 
 export const prerender = false;
-
-let categories = [];
-try {
-  categories = await listCategories();
-} catch (e) {
-  console.error('Error listando categorías:', e);
-}
 ---
 <Base title="Votos Marta">
   <section class="text-center py-10">
@@ -25,18 +17,36 @@ try {
 
   <section class="mt-8">
     <h2 class="font-bold text-lg mb-3">Categorías</h2>
-    {categories.length === 0 ? (
-      <p class="text-[var(--muted)]">Todavía no hay categorías públicas.</p>
-    ) : (
-      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {categories.map((c) => (
-          <a href={`/resultados/${c.id}`} class="card p-5 hover:border-[var(--accent)] transition">
-            <h3 class="font-bold text-lg">{c.name}</h3>
-            {c.description && <p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">{c.description}</p>}
-            <span class="badge mt-3 inline-flex">{c.actor_count} actores</span>
-          </a>
-        ))}
-      </div>
-    )}
+    <div id="cats" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <p class="text-[var(--muted)]">Cargando…</p>
+    </div>
   </section>
 </Base>
+
+<script>
+  import { listCategories } from '../lib/storage.js';
+
+  function escapeHtml(s) {
+    return String(s ?? '').replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+  }
+
+  function render() {
+    const el = document.getElementById('cats');
+    const cats = listCategories();
+    if (cats.length === 0) {
+      el.innerHTML = '<p class="text-[var(--muted)]">Todavía no hay categorías públicas.</p>';
+      return;
+    }
+    el.innerHTML = cats.map((c) => `
+      <a href="/resultados/${c.id}" class="card p-5 hover:border-[var(--accent)] transition">
+        <h3 class="font-bold text-lg">${escapeHtml(c.name)}</h3>
+        ${c.description ? `<p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">${escapeHtml(c.description)}</p>` : ''}
+        <span class="badge mt-3 inline-flex">${c.actor_count} actores</span>
+      </a>
+    `).join('');
+  }
+
+  render();
+</script>

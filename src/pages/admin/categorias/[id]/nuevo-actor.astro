@@ -1,36 +1,82 @@
 ---
 import Base from '../../../../layouts/Base.astro';
-import { getCategory } from '../../../../lib/db.mjs';
 
 export const prerender = false;
 
-const id = Number(Astro.params.id);
-const category = await getCategory(id);
-if (!category) {
-  return Astro.redirect('/admin');
-}
+const id = Astro.params.id;
 ---
-<Base title={`Nuevo actor · ${category.name}`} authed>
-  <a href={`/admin/categorias/${id}`} class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
-  <h1 class="text-2xl font-bold mt-2 mb-6">Nuevo actor / actriz</h1>
-  <form action="/api/actores" method="POST" enctype="multipart/form-data" class="card p-6 space-y-4 max-w-lg">
-    <input type="hidden" name="category_id" value={id} />
-    <div>
-      <label class="label" for="name">Nombre</label>
-      <input class="input" id="name" name="name" type="text" required placeholder="Nombre completo" />
-    </div>
-    <div>
-      <label class="label" for="role">Rol</label>
-      <input class="input" id="role" name="role" type="text" placeholder="Ej: Protagonista, Extra, Director..." />
-    </div>
-    <div>
-      <label class="label" for="photo">Foto</label>
-      <input class="input" id="photo" name="photo" type="file" accept="image/*" />
-      <p class="text-xs text-[var(--muted)] mt-1">Se subirá a Vercel Blob.</p>
-    </div>
-    <div class="flex gap-2 justify-end">
-      <a href={`/admin/categorias/${id}`} class="btn">Cancelar</a>
-      <button class="btn btn-primary" type="submit">Crear actor</button>
-    </div>
-  </form>
+<Base title="Nuevo actor · Votos Marta" authed>
+  <div class="max-w-lg">
+    <a id="back" href="/admin" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
+    <h1 class="text-2xl font-bold mt-2 mb-6">Nuevo actor / actriz</h1>
+    <form id="form" class="card p-6 space-y-4">
+      <div>
+        <label class="label" for="name">Nombre</label>
+        <input class="input" id="name" name="name" type="text" required placeholder="Nombre completo" />
+      </div>
+      <div>
+        <label class="label" for="role">Rol</label>
+        <input class="input" id="role" name="role" type="text" placeholder="Ej: Protagonista, Extra, Director..." />
+      </div>
+      <div>
+        <label class="label" for="photoUrl">Foto (URL)</label>
+        <input class="input" id="photoUrl" name="photoUrl" type="url" placeholder="https://..." />
+        <p class="text-xs text-[var(--muted)] mt-1">Pega una URL de imagen. Recomendado (ocupa poco espacio).</p>
+      </div>
+      <div>
+        <label class="label" for="photoFile">...o sube un archivo</label>
+        <input class="input" id="photoFile" name="photoFile" type="file" accept="image/*" />
+        <p class="text-xs text-[var(--muted)] mt-1">Se guarda como data-URL en el navegador. Evita imágenes pesadas (&gt;500 KB).</p>
+      </div>
+      <div class="flex gap-2 justify-end">
+        <a id="cancel" href="/admin" class="btn">Cancelar</a>
+        <button class="btn btn-primary" type="submit">Crear actor</button>
+      </div>
+    </form>
+  </div>
 </Base>
+
+<script>
+  import { createActor, getCategory } from '../../../../lib/storage.js';
+
+  const id = location.pathname.split('/').filter(Boolean)[2];
+
+  if (!getCategory(id)) {
+    location.href = '/admin';
+  } else {
+    document.getElementById('back').href = `/admin/categorias/${id}`;
+    document.getElementById('cancel').href = `/admin/categorias/${id}`;
+  }
+
+  function fileToDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.onerror = reject;
+      r.readAsDataURL(file);
+    });
+  }
+
+  document.getElementById('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = String(fd.get('name') || '').trim();
+    const role = String(fd.get('role') || '').trim();
+    const url = String(fd.get('photoUrl') || '').trim();
+    const file = fd.get('photoFile');
+
+    if (!name) return;
+
+    let photoUrl = url || null;
+    if (file && file.size > 0) {
+      if (file.size > 1_500_000) {
+        alert('La imagen es demasiado grande (>1.5 MB). Usa una URL o una imagen más ligera.');
+        return;
+      }
+      photoUrl = await fileToDataUrl(file);
+    }
+
+    createActor(id, name, role, photoUrl);
+    location.href = `/admin/categorias/${id}`;
+  });
+</script>
