@@ -1,5 +1,5 @@
-const ADMIN_USER = process.env.ADMIN_USER || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'password';
+const ADMIN_USER = (process.env.ADMIN_USER || 'admin').trim();
+const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD || 'password').trim();
 const SESSION_SECRET = process.env.SESSION_SECRET || 'votos-marta-dev-secret';
 
 // Duración de la sesión: 365 días. La sesión persiste al cerrar el navegador
