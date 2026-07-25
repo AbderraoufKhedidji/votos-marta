@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # base de datos local SQLite (modo dev sin Turso)
 /data/
+
+.vercel
+.env*.local
