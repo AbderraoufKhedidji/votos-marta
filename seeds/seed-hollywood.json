@@ -1,0 +1,58 @@
+{
+  "category": {
+    "name": "Actrices más famosas de Hollywood",
+    "description": "Selección de actrices icónicas de Hollywood. Fotos desde Wikimedia Commons."
+  },
+  "actors": [
+    {
+      "name": "Meryl Streep",
+      "role": "Miranda Priestly (El diablo viste de Prada)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_%28cropped1%29.jpg"
+    },
+    {
+      "name": "Scarlett Johansson",
+      "role": "Black Widow (Marvel)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Scarlett_Johansson-8588.jpg"
+    },
+    {
+      "name": "Angelina Jolie",
+      "role": "Lara Croft (Tomb Raider)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Angelina_Jolie-643531_%28cropped%29.jpg"
+    },
+    {
+      "name": "Jennifer Lawrence",
+      "role": "Katniss Everdeen (Los Juegos del Hambre)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Jennifer_Lawrence_in_2018.png"
+    },
+    {
+      "name": "Natalie Portman",
+      "role": "Nina Sayers (El cisne negro)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/NataliePortman.jpg"
+    },
+    {
+      "name": "Margot Robbie",
+      "role": "Harley Quinn (DC)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg"
+    },
+    {
+      "name": "Zendaya",
+      "role": "MJ (Spider-Man)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zendaya-byPhilipRomano.jpg/3840px-Zendaya-byPhilipRomano.jpg"
+    },
+    {
+      "name": "Emma Stone",
+      "role": "Mia (La La Land)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Emma_Stone_at_the_2025_Venice_Film_Festival-6313_%28cropped%29.jpg"
+    },
+    {
+      "name": "Cate Blanchett",
+      "role": "Galadriel (El Señor de los Anillos)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Cate_Blanchett-63298_%28cropped_2%29.jpg"
+    },
+    {
+      "name": "Viola Davis",
+      "role": "Aibileen (The Help)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg"
+    }
+  ]
+}

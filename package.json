@@ -1,0 +1,31 @@
+{
+  "name": "votos-marta",
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "twitch-hook": "node twitch-hook/index.mjs",
+    "db:setup": "node scripts/setup-db.mjs",
+    "seed:hollywood": "node scripts/seed-hollywood.mjs"
+  },
+  "dependencies": {
+    "@astrojs/react": "^6.0.1",
+    "@astrojs/vercel": "^11.0.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vercel/blob": "^2.6.1",
+    "@vercel/postgres": "^0.10.0",
+    "astro": "^7.1.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "tmi.js": "^1.8.5"
+  }
+}

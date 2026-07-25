@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+
+const { title = 'Votos Marta' } = Astro.props;
+const authed = Astro.locals.authed === true;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <header class="border-b border-[var(--border)] bg-[var(--panel)]/60 backdrop-blur sticky top-0 z-10">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 font-bold text-lg">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/418f1e13-0eba-425a-8b14-278d2971f36f-profile_image-70x70.png" alt="Marta" class="w-8 h-8 rounded-lg" />
+          Votos Marta
+        </a>
+        <nav class="flex items-center gap-4 text-sm">
+          <a href="/resultados" class="hover:text-[var(--accent)]">Resultados</a>
+          {authed ? (
+            <>
+              <a href="/admin" class="hover:text-[var(--accent)]">Panel</a>
+              <a href="/logout" class="hover:text-[var(--accent)]">Salir</a>
+            </>
+          ) : (
+            <a href="/login" class="hover:text-[var(--accent)]">Entrar</a>
+          )}
+        </nav>
+      </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <slot />
+    </main>
+  </body>
+</html>

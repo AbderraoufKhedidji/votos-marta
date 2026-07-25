@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { listCategories } from '../lib/db.mjs';
+
+export const prerender = false;
+
+let categories = [];
+try {
+  categories = await listCategories();
+} catch (e) {
+  console.error('Error listando categorías:', e);
+}
+---
+<Base title="Votos Marta">
+  <section class="text-center py-10">
+    <h1 class="text-4xl font-extrabold tracking-tight">Votos Marta</h1>
+    <p class="text-[var(--muted)] mt-3 max-w-xl mx-auto">
+      Gestión de categorías y actores, con votación en directo a través del chat de Twitch.
+    </p>
+    <div class="flex gap-3 justify-center mt-6">
+      <a href="/resultados" class="btn btn-primary">Ver resultados</a>
+      <a href="/login" class="btn">Acceso admin</a>
+    </div>
+  </section>
+
+  <section class="mt-8">
+    <h2 class="font-bold text-lg mb-3">Categorías</h2>
+    {categories.length === 0 ? (
+      <p class="text-[var(--muted)]">Todavía no hay categorías públicas.</p>
+    ) : (
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map((c) => (
+          <a href={`/resultados/${c.id}`} class="card p-5 hover:border-[var(--accent)] transition">
+            <h3 class="font-bold text-lg">{c.name}</h3>
+            {c.description && <p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">{c.description}</p>}
+            <span class="badge mt-3 inline-flex">{c.actor_count} actores</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</Base>

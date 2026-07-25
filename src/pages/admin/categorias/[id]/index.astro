@@ -1,0 +1,99 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import { getCategory, listActors, getActiveActor } from '../../../../lib/db.mjs';
+
+export const prerender = false;
+
+const id = Number(Astro.params.id);
+const category = await getCategory(id);
+if (!category) {
+  return Astro.redirect('/admin');
+}
+const [actors, activeActor] = await Promise.all([
+  listActors(id).catch(() => []),
+  getActiveActor(),
+]);
+const activeId = activeActor?.id;
+---
+<Base title={`${category.name} · Votos Marta`} authed>
+  <a href="/admin" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
+  <div class="flex flex-wrap items-start justify-between gap-3 mt-2 mb-4">
+    <div>
+      <h1 class="text-2xl font-bold">{category.name}</h1>
+      {category.description && <p class="text-[var(--muted)] text-sm mt-1">{category.description}</p>}
+    </div>
+    <div class="flex gap-2">
+      <a href={`/admin/categorias/${id}/editar`} class="btn">Editar categoría</a>
+      <a href={`/admin/categorias/${id}/nuevo-actor`} class="btn btn-primary">+ Nuevo actor</a>
+    </div>
+  </div>
+
+  {activeActor && (
+    <div class="card p-4 mb-5 flex items-center gap-3" style="border-color: var(--accent);">
+      <span class="inline-block w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+      <div class="flex-1">
+        <p class="text-sm text-[var(--muted)]">Votación activa ahora mismo:</p>
+        <p class="font-bold">{activeActor.name} <span class="text-[var(--muted)] font-normal">· los votos del chat de Twitch irán a este actor</span></p>
+      </div>
+      <form action={`/api/actores/${activeActor.id}/desactivar`} method="POST">
+        <input type="hidden" name="category_id" value={id} />
+        <button class="btn" type="submit">Detener votación</button>
+      </form>
+    </div>
+  )}
+
+  <h2 class="font-bold text-lg mb-3">Actores / actrices</h2>
+
+  {actors.length === 0 ? (
+    <div class="card p-10 text-center">
+      <p class="text-[var(--muted)]">Aún no hay actores en esta categoría.</p>
+      <a href={`/admin/categorias/${id}/nuevo-actor`} class="btn btn-primary mt-4 inline-flex">Añadir el primero</a>
+    </div>
+  ) : (
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {actors.map((a) => (
+        <div class="card p-4 flex gap-4">
+          <div class="w-20 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-[var(--panel-2)]">
+            {a.photo_url ? (
+              <img src={a.photo_url} alt={a.name} class="w-full h-full object-cover" />
+            ) : (
+              <div class="w-full h-full flex items-center justify-center text-[var(--muted)] text-xs">Sin foto</div>
+            )}
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold leading-tight truncate">{a.name}</h3>
+            {a.role && <p class="text-[var(--muted)] text-sm truncate">{a.role}</p>}
+            <div class="flex gap-2 mt-2 flex-wrap">
+              <span class="badge">{a.vote_count} votos</span>
+              {a.vote_count > 0 && <span class="badge">media {Number(a.avg_score).toFixed(1)}</span>}
+            </div>
+            <div class="flex gap-2 mt-3 flex-wrap">
+              <a href={`/votar/${a.id}`} target="_blank" class="btn text-xs py-1 px-2">Ver en directo ↗</a>
+              <a href={`/admin/categorias/${id}/actores/${a.id}/editar`} class="btn text-xs py-1 px-2">Editar</a>
+              <form action={`/api/actores/${a.id}/activar`} method="POST">
+                <input type="hidden" name="category_id" value={id} />
+                <button class={`btn text-xs py-1 px-2 ${activeId === a.id ? 'btn-primary' : ''}`} type="submit">
+                  {activeId === a.id ? 'Votando ✓' : 'Activar votación'}
+                </button>
+              </form>
+              <form action={`/api/actores/${a.id}?_method=DELETE`} method="POST"
+                    onsubmit="return confirm('¿Eliminar este actor?')">
+                <button class="btn btn-danger text-xs py-1 px-2" type="submit">Borrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <div class="mt-10 border-t border-[var(--border)] pt-6">
+    <details>
+      <summary class="cursor-pointer text-sm text-[var(--muted)] hover:text-[var(--accent)]">Zona de peligro</summary>
+      <form action={`/api/categorias/${id}?_method=DELETE`} method="POST" class="mt-3"
+            onsubmit="return confirm('¿Eliminar esta categoría y todos sus actores?')">
+        <button class="btn btn-danger" type="submit">Eliminar categoría</button>
+      </form>
+    </details>
+  </div>
+</Base>

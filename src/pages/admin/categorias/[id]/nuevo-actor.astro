@@ -1,0 +1,36 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import { getCategory } from '../../../../lib/db.mjs';
+
+export const prerender = false;
+
+const id = Number(Astro.params.id);
+const category = await getCategory(id);
+if (!category) {
+  return Astro.redirect('/admin');
+}
+---
+<Base title={`Nuevo actor · ${category.name}`} authed>
+  <a href={`/admin/categorias/${id}`} class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
+  <h1 class="text-2xl font-bold mt-2 mb-6">Nuevo actor / actriz</h1>
+  <form action="/api/actores" method="POST" enctype="multipart/form-data" class="card p-6 space-y-4 max-w-lg">
+    <input type="hidden" name="category_id" value={id} />
+    <div>
+      <label class="label" for="name">Nombre</label>
+      <input class="input" id="name" name="name" type="text" required placeholder="Nombre completo" />
+    </div>
+    <div>
+      <label class="label" for="role">Rol</label>
+      <input class="input" id="role" name="role" type="text" placeholder="Ej: Protagonista, Extra, Director..." />
+    </div>
+    <div>
+      <label class="label" for="photo">Foto</label>
+      <input class="input" id="photo" name="photo" type="file" accept="image/*" />
+      <p class="text-xs text-[var(--muted)] mt-1">Se subirá a Vercel Blob.</p>
+    </div>
+    <div class="flex gap-2 justify-end">
+      <a href={`/admin/categorias/${id}`} class="btn">Cancelar</a>
+      <button class="btn btn-primary" type="submit">Crear actor</button>
+    </div>
+  </form>
+</Base>

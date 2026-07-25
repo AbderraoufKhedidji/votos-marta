@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { VotacionDirecto } from '../../components/votacion/VotacionDirecto.jsx';
+import { getActor, listVotesForActor } from '../../lib/db.mjs';
+
+export const prerender = false;
+
+const id = Number(Astro.params.id);
+let actor = null;
+let initialVotes = [];
+try {
+  actor = await getActor(id);
+  if (actor) initialVotes = await listVotesForActor(id);
+} catch (e) {
+  console.error('Error cargando votación:', e);
+}
+if (!actor) {
+  return Astro.redirect('/resultados');
+}
+
+const channel = process.env.TWITCH_CHANNEL || 'darkmius';
+const authed = Astro.locals.authed === true;
+---
+<Base title={`Votando · ${actor.name}`}>
+  <a href="/resultados" class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver a resultados</a>
+
+  <div class="grid gap-6 mt-3 lg:grid-cols-[320px_1fr]">
+    <!-- IZQUIERDA: actriz -->
+    <div class="card p-5 lg:sticky lg:top-20 self-start">
+      <div class="aspect-[4/5] rounded-lg overflow-hidden bg-[var(--panel-2)] mb-4">
+        {actor.photo_url ? (
+          <img src={actor.photo_url} alt={actor.name} class="w-full h-full object-cover" />
+        ) : (
+          <div class="w-full h-full flex items-center justify-center text-[var(--muted)]">Sin foto</div>
+        )}
+      </div>
+      <h1 class="text-2xl font-bold leading-tight">{actor.name}</h1>
+      {actor.role && <p class="text-[var(--muted)] text-sm mt-1">{actor.role}</p>}
+      <div class="mt-4 pt-4 border-t border-[var(--border)] text-xs text-[var(--muted)]">
+        Vota en el chat de Twitch con un número del <b>0 al 10</b>. Un voto por usuario.
+      </div>
+    </div>
+
+    <!-- DERECHA: gráfica + chat + guardar (isla React) -->
+    <VotacionDirecto
+      actorId={id}
+      channel={channel}
+      authed={authed}
+      initialVotes={initialVotes}
+      client:load
+    />
+  </div>
+</Base>

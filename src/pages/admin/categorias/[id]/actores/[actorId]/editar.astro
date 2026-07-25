@@ -1,0 +1,41 @@
+---
+import Base from '../../../../../../layouts/Base.astro';
+import { getCategory, getActor } from '../../../../../../lib/db.mjs';
+
+export const prerender = false;
+
+const categoryId = Number(Astro.params.id);
+const actorId = Number(Astro.params.actorId);
+const [category, actor] = await Promise.all([getCategory(categoryId), getActor(actorId)]);
+if (!category || !actor) {
+  return Astro.redirect('/admin');
+}
+---
+<Base title={`Editar · ${actor.name}`} authed>
+  <a href={`/admin/categorias/${categoryId}`} class="text-sm text-[var(--muted)] hover:text-[var(--accent)]">← Volver</a>
+  <h1 class="text-2xl font-bold mt-2 mb-6">Editar actor</h1>
+  <form action={`/api/actores/${actorId}?_method=PUT`} method="POST" enctype="multipart/form-data" class="card p-6 space-y-4 max-w-lg">
+    <div>
+      <label class="label" for="name">Nombre</label>
+      <input class="input" id="name" name="name" type="text" required value={actor.name} />
+    </div>
+    <div>
+      <label class="label" for="role">Rol</label>
+      <input class="input" id="role" name="role" type="text" value={actor.role ?? ''} />
+    </div>
+    <div>
+      <label class="label" for="photo">Foto</label>
+      {actor.photo_url && (
+        <div class="mb-2">
+          <img src={actor.photo_url} alt={actor.name} class="w-24 h-28 rounded-lg object-cover" />
+        </div>
+      )}
+      <input class="input" id="photo" name="photo" type="file" accept="image/*" />
+      <p class="text-xs text-[var(--muted)] mt-1">Deja vacío para mantener la actual.</p>
+    </div>
+    <div class="flex gap-2 justify-end">
+      <a href={`/admin/categorias/${categoryId}`} class="btn">Cancelar</a>
+      <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+  </form>
+</Base>
