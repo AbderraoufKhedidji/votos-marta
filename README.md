@@ -62,7 +62,7 @@ No requiere ninguna variable de entorno obligatoria (solo las opcionales de admi
 > No hace falta Turso, Postgres ni Vercel Blob. Toda la persistencia es client-side.
 > Las credenciales de admin en producción se definen con `ADMIN_USER` / `ADMIN_PASSWORD`
 > en Vercel (Project → Settings → Environment Variables). Si no se definen, se usan
-> los valores por defecto `admin` / `password`.
+> los valores por defecto `admin` / `password`. Ya están configuradas en este proyecto.
 
 ## Estructura
 
