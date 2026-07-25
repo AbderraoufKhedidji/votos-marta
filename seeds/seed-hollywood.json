@@ -1,7 +1,7 @@
 {
   "category": {
-    "name": "Actrices más famosas de Hollywood",
-    "description": "Selección de actrices icónicas de Hollywood. Fotos desde Wikimedia Commons."
+    "name": "Actrices más famosas: Hollywood y España",
+    "description": "Selección de actrices icónicas de Hollywood y del cine español. Fotos desde Wikimedia Commons."
   },
   "actors": [
     {
@@ -53,6 +53,221 @@
       "name": "Viola Davis",
       "role": "Aibileen (The Help)",
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg"
+    },
+    {
+      "name": "Anne Hathaway",
+      "role": "Fantine (Los miserables)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg"
+    },
+    {
+      "name": "Charlize Theron",
+      "role": "Furiosa (Mad Max: Fury Road)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/CharlizeTheron-byPhilipRomano.jpg/3840px-CharlizeTheron-byPhilipRomano.jpg"
+    },
+    {
+      "name": "Emma Watson",
+      "role": "Hermione Granger (Harry Potter)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Emma_Watson_2013.jpg"
+    },
+    {
+      "name": "Keira Knightley",
+      "role": "Elizabeth Bennet (Orgullo y prejuicio)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Knightley_Bafta_2015_07.png"
+    },
+    {
+      "name": "Reese Witherspoon",
+      "role": "Elle Woods (Legalmente rubia)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Reese_Witherspoon_%2829144489784%29_%28cropped%29.jpg"
+    },
+    {
+      "name": "Julia Roberts",
+      "role": "Vivian (Pretty Woman)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Julia_Roberts_2025.jpg"
+    },
+    {
+      "name": "Sandra Bullock",
+      "role": "Leigh Anne (The Blind Side)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Sandra_Bullock_at_The_Egyptian_Theatre_2024.jpg"
+    },
+    {
+      "name": "Nicole Kidman",
+      "role": "Satine (Moulin Rouge)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/MKr384262_Nicole_Kidman_%28Women_In_Motion%2C_Cannes_2025%29.jpg"
+    },
+    {
+      "name": "Amy Adams",
+      "role": "Giselle (Encantada)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg"
+    },
+    {
+      "name": "Jessica Chastain",
+      "role": "Maya (La noche más oscura)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Jessica_Chastain-64631_%28cropped%29.jpg"
+    },
+    {
+      "name": "Brie Larson",
+      "role": "Ma (Room)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Captain_Marvel_trailer_at_the_National_Air_and_Space_Museum_4_%28cropped%29.jpg"
+    },
+    {
+      "name": "Saoirse Ronan",
+      "role": "Jo March (Mujercitas)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/MKr349648_Saoirse_Ronan_%28The_Outrun%2C_Berlinale_2024%29.jpg"
+    },
+    {
+      "name": "Florence Pugh",
+      "role": "Amy March (Mujercitas)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Florence_Pugh_at_the_2024_Toronto_International_Film_Festival_13_%28cropped_2_%E2%80%93_color_adjusted%29.jpg"
+    },
+    {
+      "name": "Anya Taylor-Joy",
+      "role": "Beth Harmon (Gambito de dama)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Anya_Taylor-Joy_at_the_2025_Toronto_International_Film_Festival._06_%28cropped%29.jpg"
+    },
+    {
+      "name": "Alicia Vikander",
+      "role": "Gerda (La chica danesa)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Alicia_Vikander-7756.jpg"
+    },
+    {
+      "name": "Elizabeth Olsen",
+      "role": "Wanda Maximoff (Marvel)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Elizabeth_Olsen_-_Los_Angeles_Comic_Con_2025.jpg"
+    },
+    {
+      "name": "Gal Gadot",
+      "role": "Wonder Woman (DC)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Gal_Gadot_by_Gage_Skidmore_3.jpg"
+    },
+    {
+      "name": "Ana de Armas",
+      "role": "Marta Cabrera (Knives Out)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg"
+    },
+    {
+      "name": "Rachel McAdams",
+      "role": "Allie (El diario de Noah)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Rachel_McAdams_-_Walk_of_Fame.jpg"
+    },
+    {
+      "name": "Kate Winslet",
+      "role": "Rose (Titanic)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/KateWinslet_%28cropped%29.jpg"
+    },
+    {
+      "name": "Jennifer Connelly",
+      "role": "Alicia Nash (Una mente maravillosa)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Jennifer_Connelly_2019_2.png"
+    },
+    {
+      "name": "Michelle Williams",
+      "role": "Marilyn Monroe (My Week with Marilyn)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/MichelleWilliams-byPhilipRomano.jpg/3840px-MichelleWilliams-byPhilipRomano.jpg"
+    },
+    {
+      "name": "Kristen Stewart",
+      "role": "Bella Swan (Crepúsculo)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Kristen_Stewart_at_WWD_Style_Awards_2026.jpg"
+    },
+    {
+      "name": "Salma Hayek",
+      "role": "Frida Kahlo (Frida)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/MKr383631_Salma_Hayek_%28Women_In_Motion%2C_Cannes_2025%29_crop.jpg"
+    },
+    {
+      "name": "Halle Berry",
+      "role": "Leticia (Monster's Ball)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Halle_Berry-1910.jpg"
+    },
+    {
+      "name": "Zoe Saldana",
+      "role": "Neytiri (Avatar)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg"
+    },
+    {
+      "name": "Marion Cotillard",
+      "role": "Édith Piaf (La vida en rosa)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Marion_Cotillard_at_2019_Cannes.jpg"
+    },
+    {
+      "name": "Léa Seydoux",
+      "role": "Madeleine Swann (Spectre)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/L%C3%A9a_Seydoux_Cannes_2016.jpg"
+    },
+    {
+      "name": "Monica Bellucci",
+      "role": "Persephone (Matrix Reloaded)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Monica_Bellucci-63654.jpg"
+    },
+    {
+      "name": "Penélope Cruz",
+      "role": "Raimunda (Volver)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Goyas_2024_-_Pen%C3%A9lope_Cruz-2_%28cropped%29.jpg"
+    },
+    {
+      "name": "Paz Vega",
+      "role": "Lucía (Lucía y el sexo)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Premios_Goya_2020_-_Paz_Vega_%28cropped%29.jpg"
+    },
+    {
+      "name": "Victoria Abril",
+      "role": "Ana (Átame)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Victoria_Abril_Cannes_2013.jpg"
+    },
+    {
+      "name": "Carmen Maura",
+      "role": "Pepa (Mujeres al borde de un ataque de nervios)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/M%C3%A1laga_Film_Festival_2026_-_Carmen_Maura_%28cropped%29.jpg"
+    },
+    {
+      "name": "Maribel Verdú",
+      "role": "Luisa (Y tu mamá también)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Goyas_2025_-_Maribel_Verd%C3%BA.jpg/3840px-Goyas_2025_-_Maribel_Verd%C3%BA.jpg"
+    },
+    {
+      "name": "Elena Anaya",
+      "role": "Vera (La piel que habito)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Elena_Anaya_at_Berlin_Film_Festival_2026%2C_%28P1230468%29.jpg"
+    },
+    {
+      "name": "Ariadna Gil",
+      "role": "Violeta (Belle Époque)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Goyas_2023_-_Sin_identificar_090.jpg"
+    },
+    {
+      "name": "Aitana Sánchez-Gijón",
+      "role": "Nadie hablará de nosotras cuando hayamos muerto",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Goyas_2024_-_Aitana_S%C3%A1nchez-Gij%C3%B3n_%28cropped%29.jpg"
+    },
+    {
+      "name": "Pilar López de Ayala",
+      "role": "Juana I de Castilla (Juana la Loca)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Festival_de_M%C3%A1laga_2024_-_Pilar_L%C3%B3pez_de_Ayala_%28cropped%29.jpg"
+    },
+    {
+      "name": "Adriana Ugarte",
+      "role": "Vera (Durante la tormenta)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Adriana_Ugarte_2014.jpg"
+    },
+    {
+      "name": "Belén Rueda",
+      "role": "Laura (El orfanato)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Festival_de_M%C3%A1laga_2024_-_Bel%C3%A9n_Rueda.jpg"
+    },
+    {
+      "name": "Clara Lago",
+      "role": "Carol (Ocho apellidos catalanes)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Clara_Lago_en_los_Premios_Goya_2017_%28cropped%29.jpg"
+    },
+    {
+      "name": "Úrsula Corberó",
+      "role": "Tokio (La casa de papel)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/%C3%9Arsula_Corber%C3%B3-65339.jpg"
+    },
+    {
+      "name": "Blanca Suárez",
+      "role": "Leticia (El internado)",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg"
     }
   ]
 }
