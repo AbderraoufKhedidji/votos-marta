@@ -10,23 +10,24 @@ Web en **Astro** para gestionar categorías de actores/actrices y puntuarlos en 
 - **Actor activo**: el admin elige qué actor se está votando en cada momento.
 - **Hook de Twitch** (script Node con `tmi.js`) que lee el chat del canal, extrae el primer número del **0 al 10** de cada mensaje y guarda **un único voto por usuario** (las siguientes votaciones se ignoran), asignándolo al actor activo.
 - Página pública de **resultados** con medias y rankings.
-- **Vista de votación en directo** (`/votar/[id]`): al hacer clic en una actriz se muestra su foto a la izquierda, una **gráfica de barras en tiempo real** (encuesta `/api/votos/[id]` cada segundo) y un **chat propio minimalista** a la derecha (solo lectura, solo mensajes de la gente con su color, sin escritura ni regalos). El chat es una **isla React** (`src/components/twitch/ChatDirect.jsx`) que se conecta al IRC de Twitch desde el navegador con `tmi.js` (conexión anónima, sin token) en tiempo real; no usa el embed nativo de Twitch ni requiere backend de mensajes.
+- **Vista de votación en directo** (`/votar/[id]`): al hacer clic en una actriz se muestra su foto a la izquierda, una **gráfica de barras en tiempo real** y un **chat propio minimalista** a la derecha (solo lectura, solo mensajes de la gente con su color, sin escritura ni regalos). El chat es una **isla React** (`src/components/votacion/VotacionDirecto.jsx`) que se conecta al IRC de Twitch desde el navegador por WebSocket (conexión anónima, sin token) en tiempo real; no usa el embed nativo de Twitch ni requiere backend. La gráfica se actualiza en vivo contando los votos del chat en el cliente (un voto por usuario). Hay botones de **Guardar votación** (persiste el recuento en la BD), **Resetear** y **Ver votaciones** (modal con la lista de usuarios y sus notas).
 
 ## Stack
 
-- Astro 5 (`output: server`) + adapter `@astrojs/vercel`.
+- Astro 7 (`output: server`) + adapter `@astrojs/vercel`.
 - Tailwind CSS v4.
-- **Almacenamiento dual:** modo local (JSON en `data/db.json` + fotos en `public/uploads/`) para desarrollo, o **Vercel Postgres** + **Vercel Blob** para producción. Se elige automáticamente según las variables de entorno.
-- `tmi.js` para el hook de Twitch.
+- **Base de datos: Turso (libSQL/SQLite)** — un único `src/lib/db.mjs` que en local usa un archivo SQLite (`data/votos.db`) y en Vercel usa Turso (SQLite alojado). Mismo SQL, mismo código, solo cambia la URL de conexión.
+- **Fotos:** Vercel Blob en producción, o disco local (`public/uploads/`) en desarrollo.
+- `tmi.js` para el hook de Twitch (opcional, graba votos en segundo plano).
 
 ## Puesta en marcha local
 
-Hay **dos modos** de almacenamiento, seleccionados automáticamente:
+Hay **un único backend** (libSQL/SQLite) que se configura solo:
 
-- **Modo local (por defecto en dev sin Vercel):** los datos se guardan en `data/db.json` y las fotos en `public/uploads/`. No necesita Postgres ni Blob. Ideal para probar.
-- **Modo Postgres/Blob (producción):** se activa automáticamente cuando existen `POSTGRES_URL` y `BLOB_READ_WRITE_TOKEN`.
+- **Modo local (por defecto en dev):** si no hay `TURSO_DATABASE_URL`, se usa un archivo SQLite en `data/votos.db` (se crea solo al arrancar) y las fotos en `public/uploads/`. No necesita Turso ni Blob.
+- **Modo Turso (producción/Vercel):** si existe `TURSO_DATABASE_URL` (+ `TURSO_AUTH_TOKEN`), se conecta a Turso.
 
-### Opción rápida: modo local (sin Vercel)
+### Opción rápida: modo local (sin Turso)
 
 1. Instala dependencias:
    ```bash
@@ -40,13 +41,14 @@ Hay **dos modos** de almacenamiento, seleccionados automáticamente:
    ```bash
    npm run dev
    ```
+   El esquema de la BD se crea automáticamente la primera vez.
 4. Abre http://localhost:4321/login e inicia sesión con `admin` / `password` (o los que pusiste en `.env`).
 5. (Opcional) Lanza el hook de Twitch para recibir votos:
    ```bash
    npm run twitch-hook
    ```
 
-> En modo local **no hace falta** ejecutar `npm run db:setup` (el script detecta la ausencia de `POSTGRES_URL` y no hace nada).
+> En modo local **no hace falta** ejecutar `npm run db:setup` (el esquema se crea solo al arrancar).
 
 ### Datos de ejemplo (seed)
 
@@ -60,30 +62,21 @@ npm run seed:hollywood
 - Para volver a insertar sin descargar (reutilizando el JSON): `npm run seed:hollywood -- --reuse`.
 - Puedes editar `seeds/seed-hollywood.json` a mano y volver a ejecutar con `--reuse` para cargar tus propios datos.
 
-### Opción con Vercel Postgres + Blob
+### Opción con Turso (para probar producción en local)
 
-1. Instala dependencias:
-   ```bash
-   npm install
+1. Crea una base de datos en https://turso.app (gratis) y obtén la URL (`libsql://...`) y un token.
+2. Pon en `.env`:
    ```
-2. Crea una base de datos **Vercel Postgres** y un store **Vercel Blob** en tu proyecto de Vercel, y enlaza las variables de entorno localmente:
-   ```bash
-   npm i -g vercel
-   vercel link
-   vercel env pull .env.local
+   TURSO_DATABASE_URL=libsql://<tu-db>.turso.io
+   TURSO_AUTH_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    ```
-   Esto rellena `POSTGRES_URL` y `BLOB_READ_WRITE_TOKEN`.
-3. Crea el esquema en la base de datos:
+3. Crea el esquema en Turso:
    ```bash
    npm run db:setup
    ```
-4. Arranca el servidor de desarrollo:
+4. Arranca:
    ```bash
    npm run dev
-   ```
-6. (Opcional) Lanza el hook de Twitch para empezar a recibir votos:
-   ```bash
-   npm run twitch-hook
    ```
 
 ## Obtener el token de Twitch
@@ -95,18 +88,26 @@ npm run seed:hollywood
 
 ## Despliegue en Vercel
 
-1. Sube el repo a GitHub.
-2. Importa el proyecto en Vercel (detecta Astro automáticamente gracias al adapter).
-3. En el proyecto de Vercel:
-   - **Storage → Create → Postgres** (Neon). Se inyectan las variables `POSTGRES_*`.
-   - **Storage → Create → Blob**. Se inyecta `BLOB_READ_WRITE_TOKEN`.
-4. Añade las variables de entorno:
+1. Sube el repo a GitHub (Vercel lo detecta automáticamente gracias al adapter de Astro).
+2. Importa el proyecto en Vercel.
+3. **Crea la base de datos Turso** (la forma más fácil es desde el marketplace de Vercel):
+   - En Vercel: **Storage → Marketplace → Turso → Create database**.
+   - Esto inyecta automáticamente `TURSO_DATABASE_URL` y `TURSO_AUTH_TOKEN` en las variables de entorno del proyecto.
+   - (Alternativa: crea la BD en https://turso.app y copia la URL y el token a mano en las variables de entorno).
+4. **Crea Vercel Blob** (para las fotos de los actores):
+   - En Vercel: **Storage → Create → Blob**. Se inyecta `BLOB_READ_WRITE_TOKEN`.
+5. Añade las variables de entorno restantes:
    - `ADMIN_USER`, `ADMIN_PASSWORD`
-   - `TWITCH_CHANNEL`, `TWITCH_USERNAME`, `TWITCH_OAUTH_TOKEN`
-5. Tras el primer despliegue, ejecuta una vez la creación del esquema. Puedes hacerlo desde un terminal local con `vercel env pull .env.local && npm run db:setup`, o crear un endpoint temporal.
-6. Despliega. La web queda en tu URL de Vercel.
+   - `TWITCH_CHANNEL`, `TWITCH_USERNAME`, `TWITCH_OAUTH_TOKEN` (solo si vas a usar el hook)
+6. Crea el esquema en Turso (una vez). Desde tu máquina, con las variables cargadas:
+   ```bash
+   vercel env pull .env.local
+   npm run db:setup
+   ```
+   (O ejecuta `npm run db:setup` en cualquier entorno donde estén las variables de Turso).
+7. Despliega. La web queda en tu URL de Vercel.
 
-> El **hook de Twitch** necesita una conexión IRC persistente, así que **no** se ejecuta dentro de Vercel Serverless. Ejecútalo en tu máquina, un VPS, Railway, Render, Fly.io, etc. Apunta a la misma `POSTGRES_URL` de Vercel para que los votos se guarden en la BD compartida.
+> El **hook de Twitch** necesita una conexión IRC persistente, así que **no** se ejecuta dentro de Vercel Serverless. Ejecútalo en tu máquina, un VPS, Railway, Render, Fly.io, etc. Apunta a la misma `TURSO_DATABASE_URL` + `TURSO_AUTH_TOKEN` para que los votos se guarden en la BD compartida. (No es necesario para la vista en directo, que cuenta los votos en el navegador.)
 
 ## Estructura
 
@@ -114,14 +115,12 @@ npm run seed:hollywood
 src/
   lib/
     auth.mjs        # sesión cookie firmada (admin/password)
-    db.mjs          # dispatcher: elige backend local o Postgres
-    db-local.mjs    # backend JSON en disco (dev)
-    db-postgres.mjs # backend Vercel Postgres (prod)
+    db.mjs          # backend único libSQL/SQLite (Turso o archivo local)
     photos.mjs      # subida de fotos: Vercel Blob o disco local
   hooks/
-    useTwitchChat.js  # lee el chat de Twitch en el cliente (tmi.js, anónimo)
+    useTwitchChat.js  # lee el chat de Twitch en el cliente (WebSocket al IRC, anónimo)
   components/
-    twitch/ChatDirect.jsx  # chat minimalista solo lectura (isla React)
+    votacion/VotacionDirecto.jsx  # isla React: gráfica + chat + votos + guardar/reset/ver
   middleware.mjs    # protege rutas /admin y /api/* salvo públicas
   layouts/Base.astro
   pages/
@@ -145,12 +144,13 @@ src/
       login.js
       categorias/index.js  [id].js
       actores/index.js  [id].js  [id]/activar.js  [id]/desactivar.js
-      votos/[id].js        # estadísticas de votos en vivo (JSON, para la gráfica)
-scripts/setup-db.mjs        # crea las tablas (solo modo Postgres)
+      votos/[id].js               # estadísticas de votos en vivo (JSON, para la gráfica)
+      votos/[id]/guardar.js       # guardar/resetear la votación de un actor (admin)
+scripts/setup-db.mjs        # crea el esquema en Turso (en local se crea solo)
 scripts/seed-hollywood.mjs  # busca fotos en Wikimedia y carga actrices de ejemplo
-twitch-hook/index.mjs       # bot de chat (tmi.js)
+twitch-hook/index.mjs       # bot de chat (tmi.js, opcional, no en Vercel)
 seeds/seed-hollywood.json   # JSON seed con la categoría y 10 actrices (editable)
-data/db.json                # base de datos local (dev, gitignored)
+data/votos.db               # base de datos local SQLite (dev, gitignored)
 public/uploads/             # fotos subidas en modo local (gitignored)
 ```
 

@@ -29,5 +29,5 @@ pnpm-debug.log*
 # uploads locales
 /uploads/
 
-# base de datos local (modo dev sin Postgres)
+# base de datos local SQLite (modo dev sin Turso)
 /data/
