@@ -104,7 +104,7 @@ export const VotacionDirecto = ({ actorId, channel, authed }) => {
       <div className="card p-5 lg:sticky lg:top-20 self-start">
         <div className="aspect-[4/5] rounded-lg overflow-hidden bg-[var(--panel-2)] mb-4">
           {actor?.photo_url ? (
-            <img src={actor.photo_url} alt={actor.name} className="w-full h-full object-cover" />
+            <img src={actor.photo_url} alt={actor.name} className="w-full h-full object-cover" loading="eager" decoding="async" />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-[var(--muted)]">
               {actor ? 'Sin foto' : 'Cargando…'}

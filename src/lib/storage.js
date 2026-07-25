@@ -15,7 +15,8 @@ import seedHollywood from '../../seeds/seed-hollywood.json';
 
 // Versión del seed. Subirla fuerza la regeneración del seed en navegadores
 // que ya tenían una versión anterior (sin tocar las categorías creadas a mano).
-const SEED_VERSION = 2;
+// v2 = 53 actrices. v3 = 53 actrices con thumbnails de 330px (imágenes ligeras).
+const SEED_VERSION = 3;
 const SEED_NAMES = [
   'Actrices más famosas de Hollywood',          // seed v1
   'Actrices más famosas: Hollywood y España',  // seed v2

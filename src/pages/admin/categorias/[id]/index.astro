@@ -12,6 +12,7 @@ const id = Astro.params.id;
 
 <script>
   import { getCategory, listActors, getActiveActorId, setActiveActor, clearActiveActor, deleteActor, deleteCategory } from '../../../../lib/storage.js';
+  import { imgTag } from '../../../../lib/image.js';
 
   const id = location.pathname.split('/').filter(Boolean)[2];
 
@@ -44,9 +45,7 @@ const id = Astro.params.id;
       : `<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">` + actors.map((a) => `
         <div class="card p-4 flex gap-4">
           <div class="w-20 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-[var(--panel-2)]">
-            ${a.photo_url
-              ? `<img src="${escapeHtml(a.photo_url)}" alt="${escapeHtml(a.name)}" class="w-full h-full object-cover" />`
-              : `<div class="w-full h-full flex items-center justify-center text-[var(--muted)] text-xs">Sin foto</div>`}
+            ${imgTag(a.photo_url, a.name, { className: 'w-full h-full object-cover' })}
           </div>
           <div class="flex-1 min-w-0">
             <h3 class="font-bold leading-tight truncate">${escapeHtml(a.name)}</h3>

@@ -73,7 +73,9 @@ async function fetchPhotoUrl(title) {
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} para ${title}`);
   const data = await res.json();
-  return data.originalimage?.source || data.thumbnail?.source || null;
+  // Preferir el thumbnail (330px, ~25KB) sobre la imagen original (varios MB).
+  // Es suficiente para tarjetas y para la vista de votación, y carga muy rápido.
+  return data.thumbnail?.source || data.originalimage?.source || null;
 }
 
 async function buildSeed() {
