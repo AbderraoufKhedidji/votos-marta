@@ -8,9 +8,18 @@ const KEYS = {
   votes: 'vm:votes',
   settings: 'vm:settings',
   seeded: 'vm:seeded',
+  seedVersion: 'vm:seed_version',
 };
 
 import seedHollywood from '../../seeds/seed-hollywood.json';
+
+// Versión del seed. Subirla fuerza la regeneración del seed en navegadores
+// que ya tenían una versión anterior (sin tocar las categorías creadas a mano).
+const SEED_VERSION = 2;
+const SEED_NAMES = [
+  'Actrices más famosas de Hollywood',          // seed v1
+  'Actrices más famosas: Hollywood y España',  // seed v2
+];
 
 function read(key, fallback) {
   try {
@@ -33,12 +42,13 @@ function now() {
   return new Date().toISOString();
 }
 
-// --- Seed inicial ---
-export function seedIfEmpty() {
-  const already = read(KEYS.seeded, false);
+// --- Seed inicial (con versionado) ---
+// - Si no hay categorías: siembra el seed.
+// - Si la versión guardada es anterior a SEED_VERSION: elimina el seed anterior
+//   (categorías con nombre conocido) y vuelve a sembrar. Conserva las categorías
+//   creadas a mano por el usuario.
+function plantSeed() {
   const cats = read(KEYS.categories, []);
-  if (already || cats.length > 0) return false;
-
   const catId = nextId(cats);
   const category = {
     id: catId,
@@ -49,8 +59,9 @@ export function seedIfEmpty() {
   write(KEYS.categories, [category, ...cats]);
 
   const actors = read(KEYS.actors, []);
+  const base = nextId(actors);
   const newActors = seedHollywood.actors.map((a, i) => ({
-    id: nextId(actors) + i,
+    id: base + i,
     category_id: catId,
     name: a.name,
     role: a.role ?? null,
@@ -58,8 +69,38 @@ export function seedIfEmpty() {
     created_at: now(),
   }));
   write(KEYS.actors, [...newActors, ...actors]);
+  write(KEYS.seedVersion, SEED_VERSION);
   write(KEYS.seeded, true);
-  return true;
+}
+
+function removeSeedCategories() {
+  const cats = read(KEYS.categories, []);
+  const seedCats = cats.filter((c) => SEED_NAMES.includes(c.name));
+  if (seedCats.length === 0) return;
+  const seedIds = new Set(seedCats.map((c) => c.id));
+  const actors = read(KEYS.actors, []);
+  const seedActorIds = actors.filter((a) => seedIds.has(a.category_id)).map((a) => a.id);
+  write(KEYS.categories, cats.filter((c) => !seedIds.has(c.id)));
+  write(KEYS.actors, actors.filter((a) => !seedIds.has(a.category_id)));
+  if (seedActorIds.length) {
+    write(KEYS.votes, read(KEYS.votes, []).filter((v) => !seedActorIds.includes(v.actor_id)));
+  }
+}
+
+export function seedIfEmpty() {
+  const cats = read(KEYS.categories, []);
+  const version = Number(read(KEYS.seedVersion, 0)) || 0;
+
+  if (cats.length === 0) {
+    plantSeed();
+    return true;
+  }
+  if (version < SEED_VERSION) {
+    removeSeedCategories();
+    plantSeed();
+    return true;
+  }
+  return false;
 }
 
 // --- Categorías ---
