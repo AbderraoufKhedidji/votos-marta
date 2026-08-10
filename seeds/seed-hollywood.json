@@ -1,273 +1,802 @@
 {
-  "category": {
-    "name": "Actrices más famosas: Hollywood y España",
-    "description": "Selección de actrices icónicas de Hollywood y del cine español. Fotos desde Wikimedia Commons."
-  },
-  "actors": [
+  "categories": [
     {
-      "name": "Meryl Streep",
-      "role": "Miranda Priestly (El diablo viste de Prada)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_%28cropped1%29.jpg/330px-Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_%28cropped1%29.jpg"
+      "name": "Actrices más famosas: Hollywood y España",
+      "description": "Selección de actrices icónicas de Hollywood y del cine español. Fotos desde Wikimedia Commons.",
+      "actors": [
+        {
+          "name": "Meryl Streep",
+          "role": "Miranda Priestly (El diablo viste de Prada)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_%28cropped1%29.jpg/330px-Meryl_Streep-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194765350_%28cropped1%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Scarlett Johansson",
+          "role": "Black Widow (Marvel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/330px-Scarlett_Johansson-8588.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Angelina Jolie",
+          "role": "Lara Croft (Tomb Raider)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Angelina_Jolie-643531_%28cropped%29.jpg/330px-Angelina_Jolie-643531_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Jennifer Lawrence",
+          "role": "Katniss Everdeen (Los Juegos del Hambre)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Jennifer_Lawrence_in_2018.png/330px-Jennifer_Lawrence_in_2018.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Natalie Portman",
+          "role": "Nina Sayers (El cisne negro)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/NataliePortman.jpg/330px-NataliePortman.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Margot Robbie",
+          "role": "Harley Quinn (DC)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg/330px-Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Zendaya",
+          "role": "MJ (Spider-Man)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zendaya-byPhilipRomano.jpg/330px-Zendaya-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Emma Stone",
+          "role": "Mia (La La Land)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Emma_Stone_at_the_2025_Venice_Film_Festival-6313_%28cropped%29.jpg/330px-Emma_Stone_at_the_2025_Venice_Film_Festival-6313_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Cate Blanchett",
+          "role": "Galadriel (El Señor de los Anillos)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cate_Blanchett-63298_%28cropped_2%29.jpg/330px-Cate_Blanchett-63298_%28cropped_2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Viola Davis",
+          "role": "Aibileen (The Help)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg/330px-Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Anne Hathaway",
+          "role": "Fantine (Los miserables)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg/330px-Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Charlize Theron",
+          "role": "Furiosa (Mad Max: Fury Road)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/CharlizeTheron-byPhilipRomano2.jpg/330px-CharlizeTheron-byPhilipRomano2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Emma Watson",
+          "role": "Hermione Granger (Harry Potter)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Emma_Watson_2013.jpg/330px-Emma_Watson_2013.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Keira Knightley",
+          "role": "Elizabeth Bennet (Orgullo y prejuicio)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Knightley_Bafta_2015_07.png/330px-Knightley_Bafta_2015_07.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Reese Witherspoon",
+          "role": "Elle Woods (Legalmente rubia)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Reese_Witherspoon_%2829144489784%29_%28cropped%29.jpg/330px-Reese_Witherspoon_%2829144489784%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Julia Roberts",
+          "role": "Vivian (Pretty Woman)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Julia_Roberts_2025.jpg/330px-Julia_Roberts_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Sandra Bullock",
+          "role": "Leigh Anne (The Blind Side)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sandra_Bullock_at_The_Egyptian_Theatre_2024.jpg/330px-Sandra_Bullock_at_The_Egyptian_Theatre_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Nicole Kidman",
+          "role": "Satine (Moulin Rouge)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/MKr384262_Nicole_Kidman_%28Women_In_Motion%2C_Cannes_2025%29.jpg/330px-MKr384262_Nicole_Kidman_%28Women_In_Motion%2C_Cannes_2025%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Amy Adams",
+          "role": "Giselle (Encantada)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg/330px-Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Jessica Chastain",
+          "role": "Maya (La noche más oscura)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Jessica_Chastain-64631_%28cropped%29.jpg/330px-Jessica_Chastain-64631_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Brie Larson",
+          "role": "Ma (Room)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Captain_Marvel_trailer_at_the_National_Air_and_Space_Museum_4_%28cropped%29.jpg/330px-Captain_Marvel_trailer_at_the_National_Air_and_Space_Museum_4_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Saoirse Ronan",
+          "role": "Jo March (Mujercitas)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/MKr349648_Saoirse_Ronan_%28The_Outrun%2C_Berlinale_2024%29.jpg/330px-MKr349648_Saoirse_Ronan_%28The_Outrun%2C_Berlinale_2024%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Florence Pugh",
+          "role": "Amy March (Mujercitas)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Florence_Pugh_at_the_2024_Toronto_International_Film_Festival_13_%28cropped_2_%E2%80%93_color_adjusted%29.jpg/330px-Florence_Pugh_at_the_2024_Toronto_International_Film_Festival_13_%28cropped_2_%E2%80%93_color_adjusted%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Anya Taylor-Joy",
+          "role": "Beth Harmon (Gambito de dama)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Anya_Taylor-Joy_at_the_2025_Toronto_International_Film_Festival._06_%28cropped%29.jpg/330px-Anya_Taylor-Joy_at_the_2025_Toronto_International_Film_Festival._06_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Alicia Vikander",
+          "role": "Gerda (La chica danesa)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Alicia_Vikander-7756.jpg/330px-Alicia_Vikander-7756.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Elizabeth Olsen",
+          "role": "Wanda Maximoff (Marvel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/ElizabethOlsen-TIFF2025-02.png/330px-ElizabethOlsen-TIFF2025-02.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Gal Gadot",
+          "role": "Wonder Woman (DC)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gal_Gadot_by_Gage_Skidmore_3.jpg/330px-Gal_Gadot_by_Gage_Skidmore_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ana de Armas",
+          "role": "Marta Cabrera (Knives Out)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg/330px-Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg"
+        },
+        {
+          "name": "Rachel McAdams",
+          "role": "Allie (El diario de Noah)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rachel_McAdams_-_Walk_of_Fame.jpg/330px-Rachel_McAdams_-_Walk_of_Fame.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Kate Winslet",
+          "role": "Rose (Titanic)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/KateWinslet_%28cropped%29.jpg/330px-KateWinslet_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Jennifer Connelly",
+          "role": "Alicia Nash (Una mente maravillosa)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jennifer_Connelly_2019_2.png/330px-Jennifer_Connelly_2019_2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Michelle Williams",
+          "role": "Marilyn Monroe (My Week with Marilyn)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/MichelleWilliams-byPhilipRomano.jpg/330px-MichelleWilliams-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Kristen Stewart",
+          "role": "Bella Swan (Crepúsculo)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kristen_Stewart_at_WWD_Style_Awards_2026.jpg/330px-Kristen_Stewart_at_WWD_Style_Awards_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Salma Hayek",
+          "role": "Frida Kahlo (Frida)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/MKr383631_Salma_Hayek_%28Women_In_Motion%2C_Cannes_2025%29_crop.jpg/330px-MKr383631_Salma_Hayek_%28Women_In_Motion%2C_Cannes_2025%29_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Halle Berry",
+          "role": "Leticia (Monster's Ball)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Halle_Berry-1910.jpg/330px-Halle_Berry-1910.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Zoe Saldana",
+          "role": "Neytiri (Avatar)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Marion Cotillard",
+          "role": "Édith Piaf (La vida en rosa)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Marion_Cotillard_at_2019_Cannes.jpg/330px-Marion_Cotillard_at_2019_Cannes.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Léa Seydoux",
+          "role": "Madeleine Swann (Spectre)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/L%C3%A9a_Seydoux_Cannes_2016.jpg/330px-L%C3%A9a_Seydoux_Cannes_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Monica Bellucci",
+          "role": "Persephone (Matrix Reloaded)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Monica_Bellucci-63654.jpg/330px-Monica_Bellucci-63654.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Penélope Cruz",
+          "role": "Raimunda (Volver)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Goyas_2024_-_Pen%C3%A9lope_Cruz-2_%28cropped%29.jpg/330px-Goyas_2024_-_Pen%C3%A9lope_Cruz-2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Paz Vega",
+          "role": "Lucía (Lucía y el sexo)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Premios_Goya_2020_-_Paz_Vega_%28cropped%29.jpg/330px-Premios_Goya_2020_-_Paz_Vega_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Victoria Abril",
+          "role": "Ana (Átame)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Victoria_Abril_Cannes_2013.jpg/330px-Victoria_Abril_Cannes_2013.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Carmen Maura",
+          "role": "Pepa (Mujeres al borde de un ataque de nervios)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/M%C3%A1laga_Film_Festival_2026_-_Carmen_Maura_%28cropped%29.jpg/330px-M%C3%A1laga_Film_Festival_2026_-_Carmen_Maura_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Maribel Verdú",
+          "role": "Luisa (Y tu mamá también)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Goyas_2025_-_Maribel_Verd%C3%BA.jpg/330px-Goyas_2025_-_Maribel_Verd%C3%BA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Elena Anaya",
+          "role": "Vera (La piel que habito)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Elena_Anaya_at_Berlin_Film_Festival_2026%2C_%28P1230468%29.jpg/330px-Elena_Anaya_at_Berlin_Film_Festival_2026%2C_%28P1230468%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ariadna Gil",
+          "role": "Violeta (Belle Époque)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Goyas_2023_-_Sin_identificar_090.jpg/330px-Goyas_2023_-_Sin_identificar_090.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Aitana Sánchez-Gijón",
+          "role": "Nadie hablará de nosotras cuando hayamos muerto",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Goyas_2024_-_Aitana_S%C3%A1nchez-Gij%C3%B3n_%28cropped%29.jpg/330px-Goyas_2024_-_Aitana_S%C3%A1nchez-Gij%C3%B3n_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Pilar López de Ayala",
+          "role": "Juana I de Castilla (Juana la Loca)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Festival_de_M%C3%A1laga_2024_-_Pilar_L%C3%B3pez_de_Ayala_%28cropped%29.jpg/330px-Festival_de_M%C3%A1laga_2024_-_Pilar_L%C3%B3pez_de_Ayala_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Adriana Ugarte",
+          "role": "Vera (Durante la tormenta)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Adriana_Ugarte_2014.jpg/330px-Adriana_Ugarte_2014.jpg"
+        },
+        {
+          "name": "Belén Rueda",
+          "role": "Laura (El orfanato)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Festival_de_M%C3%A1laga_2024_-_Bel%C3%A9n_Rueda.jpg/330px-Festival_de_M%C3%A1laga_2024_-_Bel%C3%A9n_Rueda.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Clara Lago",
+          "role": "Carol (Ocho apellidos catalanes)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Clara_Lago_en_los_Premios_Goya_2017_%28cropped%29.jpg/330px-Clara_Lago_en_los_Premios_Goya_2017_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Úrsula Corberó",
+          "role": "Tokio (La casa de papel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/%C3%9Arsula_Corber%C3%B3-65339.jpg/330px-%C3%9Arsula_Corber%C3%B3-65339.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Blanca Suárez",
+          "role": "Leticia (El internado)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        }
+      ]
     },
     {
-      "name": "Scarlett Johansson",
-      "role": "Black Widow (Marvel)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/330px-Scarlett_Johansson-8588.jpg"
+      "name": "Actores más famosos: Hollywood y España",
+      "description": "Selección de actores icónicos de Hollywood y del cine español. Fotos desde Wikimedia Commons.",
+      "actors": [
+        {
+          "name": "Leonardo DiCaprio",
+          "role": "Jack Dawson (Titanic)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/LeoPTABFI191125-28_%28cropped%29.jpg/330px-LeoPTABFI191125-28_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Brad Pitt",
+          "role": "Tyler Durden (El club de la lucha)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Brad_Pitt-69858.jpg/330px-Brad_Pitt-69858.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Tom Cruise",
+          "role": "Ethan Hunt (Misión Imposible)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tom_Cruise_at_53rd_Saturn_Awards_2026-01.jpg/330px-Tom_Cruise_at_53rd_Saturn_Awards_2026-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Johnny Depp",
+          "role": "Jack Sparrow (Piratas del Caribe)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Johnny_Depp_2020.jpg/330px-Johnny_Depp_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Robert Downey Jr.",
+          "role": "Tony Stark / Iron Man (Marvel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/RobertDowneyJr-byPhilipRomano7_%28cropped%29.jpg/330px-RobertDowneyJr-byPhilipRomano7_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Denzel Washington",
+          "role": "Alonzo Harris (Training Day)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Denzel_Washington_at_the_2025_Cannes_Film_Festival.jpg/330px-Denzel_Washington_at_the_2025_Cannes_Film_Festival.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Morgan Freeman",
+          "role": "Red (Cadena perpetua)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg/330px-Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Al Pacino",
+          "role": "Michael Corleone (El padrino)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Al_Pacino_-_Killing_Castro_-_Q%26A_-_Tribeca_2026_-_by_%40JJxFile-23_%28cropped%29.jpg/330px-Al_Pacino_-_Killing_Castro_-_Q%26A_-_Tribeca_2026_-_by_%40JJxFile-23_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Robert De Niro",
+          "role": "Travis Bickle (Taxi Driver)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Robert_de_Niro_Cannes_Film_Festival_%283x4_cropped%29.jpg/330px-Robert_de_Niro_Cannes_Film_Festival_%283x4_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Tom Hanks",
+          "role": "Forrest Gump",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/TomHanksPrincEdw031223_%2811_of_41%29_%28cropped%29.jpg/330px-TomHanksPrincEdw031223_%2811_of_41%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Will Smith",
+          "role": "Agent J (Men in Black)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg/330px-TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Dwayne Johnson",
+          "role": "Luke Hobbs (Fast & Furious)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Dwayne_Johnson-1764_%284x5_cropped_with_moderate_headroom%29.jpg/330px-Dwayne_Johnson-1764_%284x5_cropped_with_moderate_headroom%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Chris Hemsworth",
+          "role": "Thor (Marvel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chris_Hemsworth_-_Crime_101.jpg/330px-Chris_Hemsworth_-_Crime_101.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Chris Evans",
+          "role": "Steve Rogers / Capitán América (Marvel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Chris_Evans_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-Chris_Evans_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ryan Reynolds",
+          "role": "Deadpool (Marvel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg/330px-Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ryan Gosling",
+          "role": "Sebastian (La La Land)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/GoslingBFI081223_%2822_of_30%29_%2853388157347%29_%28cropped%29.jpg/330px-GoslingBFI081223_%2822_of_30%29_%2853388157347%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Timothée Chalamet",
+          "role": "Paul Atreides (Dune)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Timoth%C3%A9e_Chalamet-63482_%28cropped%29.jpg/330px-Timoth%C3%A9e_Chalamet-63482_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Cillian Murphy",
+          "role": "J. Robert Oppenheimer",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg/330px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Christian Bale",
+          "role": "Bruce Wayne / Batman (El caballero oscuro)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Christian_Bale-7837.jpg/330px-Christian_Bale-7837.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Joaquin Phoenix",
+          "role": "Arthur Fleck / Joker",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Joaquin_Phoenix-64908_%28cropped%29.jpg/330px-Joaquin_Phoenix-64908_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Matthew McConaughey",
+          "role": "Cooper (Interstellar)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg/330px-Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Jake Gyllenhaal",
+          "role": "Louis Bloom (Nightcrawler)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/JakeGyllenhaal-byPhilipRomano.jpg/330px-JakeGyllenhaal-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Hugh Jackman",
+          "role": "Wolverine (X-Men)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Hugh_Jackman_by_Gage_Skidmore_3.jpg/330px-Hugh_Jackman_by_Gage_Skidmore_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Keanu Reeves",
+          "role": "Neo (Matrix)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Keanu_Reeves_at_TIFF_2025_02_%28Cropped%29.jpg/330px-Keanu_Reeves_at_TIFF_2025_02_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Idris Elba",
+          "role": "Stringer Bell (The Wire)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Idris_Elba_A_House_of_Dynamite-21_%28cropped%29.jpg/330px-Idris_Elba_A_House_of_Dynamite-21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Pedro Pascal",
+          "role": "Din Djarin / The Mandalorian",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Pedro_Pascal_at_the_2025_Cannes_Film_Festival_04.jpg/330px-Pedro_Pascal_at_the_2025_Cannes_Film_Festival_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Oscar Isaac",
+          "role": "Poe Dameron (Star Wars)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg/330px-Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Benedict Cumberbatch",
+          "role": "Sherlock Holmes",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/330px-Benedict_Cumberbatch-67555.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Michael B. Jordan",
+          "role": "Killmonger (Black Panther)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Michael_B_Jordan_-_Sinners_%28cropped%29.jpg/330px-Michael_B_Jordan_-_Sinners_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Adam Driver",
+          "role": "Kylo Ren (Star Wars)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Adam_Driver.jpg/330px-Adam_Driver.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Daniel Craig",
+          "role": "James Bond",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Daniel_Craig_TIFF_2025_Red_Carpet_%28cropped%29.jpg/330px-Daniel_Craig_TIFF_2025_Red_Carpet_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "George Clooney",
+          "role": "Danny Ocean (Ocean's Eleven)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/George_Clooney_Jay_Kelly-19_%28cropped%29.jpg/330px-George_Clooney_Jay_Kelly-19_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Matt Damon",
+          "role": "Jason Bourne",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/MattDamon-byPhilipRomano2.jpg/330px-MattDamon-byPhilipRomano2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Harrison Ford",
+          "role": "Indiana Jones",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Harrison_Ford_-_Televerse_2025-03.jpg/330px-Harrison_Ford_-_Televerse_2025-03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Anthony Hopkins",
+          "role": "Hannibal Lecter",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Anthony_Hopkins_Red_Sea_Festival_2025_Portrait_%28cropped%29.jpg/330px-Anthony_Hopkins_Red_Sea_Festival_2025_Portrait_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Javier Bardem",
+          "role": "Anton Chigurh (No es país para viejos)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Javier_Bardem_Cannes_2018.jpg/330px-Javier_Bardem_Cannes_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Antonio Banderas",
+          "role": "Zorro (La máscara del Zorro)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Goyas_2025_-_Antonio_Banderas_%28cropped%29.jpg/330px-Goyas_2025_-_Antonio_Banderas_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Eduard Fernández",
+          "role": "Cine español",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Eduard_Fern%C3%A1ndez%2C_XIV_Premis_Gaud%C3%AD_%282022%29.jpg/330px-Eduard_Fern%C3%A1ndez%2C_XIV_Premis_Gaud%C3%AD_%282022%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Luis Tosar",
+          "role": "Malamadre (Celda 211)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Premios_Goya_2026_-_Luis_Tosar_%28cropped%29.jpg/330px-Premios_Goya_2026_-_Luis_Tosar_%28cropped%29.jpg"
+        },
+        {
+          "name": "José Coronado",
+          "role": "Ricardo Delgado (El Príncipe)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Jos%C3%A9_Coronado_at_Premios_Goya_2017_%28cropped%29.jpg/330px-Jos%C3%A9_Coronado_at_Premios_Goya_2017_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Javier Cámara",
+          "role": "Benigno (Hable con ella)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Seminci_2025_-_Javier_C%C3%A1mara-3_%28cropped%29.jpg/330px-Seminci_2025_-_Javier_C%C3%A1mara-3_%28cropped%29.jpg"
+        },
+        {
+          "name": "Sergi López",
+          "role": "Harry (El laberinto del fauno)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Sergi_L%C3%B3pez-63806.jpg/330px-Sergi_L%C3%B3pez-63806.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Carlos Areces",
+          "role": "Javier (La que se avecina)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Carlos_Areces%2C_Barcelona_International_Comic_Convention_2016_%28cropped%29.jpg/330px-Carlos_Areces%2C_Barcelona_International_Comic_Convention_2016_%28cropped%29.jpg"
+        },
+        {
+          "name": "Mario Casas",
+          "role": "Ángel (El bar)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Malaga_Film_Festival_2025_-_Mario_Casas-2_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Mario_Casas-2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Álex González",
+          "role": "El Príncipe",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Alex_Gonzalez_en_el_preestreno_de_Invasor_%288242688324%29.jpg/330px-Alex_Gonzalez_en_el_preestreno_de_Invasor_%288242688324%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Miguel Ángel Silvestre",
+          "role": "Rafael (Velvet)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Malaga_Film_Festival_2025_-_Miguel_%C3%81ngel_Silvestre-2_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Miguel_%C3%81ngel_Silvestre-2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Álvaro Morte",
+          "role": "El Profesor (La casa de papel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/%C3%81lvaro_Morte%2C_2020_%28cropped%29.jpg/330px-%C3%81lvaro_Morte%2C_2020_%28cropped%29.jpg"
+        },
+        {
+          "name": "Jaime Lorente",
+          "role": "Denver (La casa de papel)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Festival_de_M%C3%A1laga_2024_-_Jaime_Lorente_%28cropped%29.jpg/330px-Festival_de_M%C3%A1laga_2024_-_Jaime_Lorente_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Paco León",
+          "role": "Luisma (Aída)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Malaga_Film_Festival_2025_-_Paco_Le%C3%B3n_02_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Paco_Le%C3%B3n_02_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Dani Rovira",
+          "role": "Rafa (Ocho apellidos vascos)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dani_Rovira_en_los_premios_Goya_2017_%28cropped%29.jpg/330px-Dani_Rovira_en_los_premios_Goya_2017_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Quim Gutiérrez",
+          "role": "Cine y series españolas",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Goyas_2025_-_Quim_Guti%C3%A9rrez_%28cropped%29.jpg/330px-Goyas_2025_-_Quim_Guti%C3%A9rrez_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Raúl Arévalo",
+          "role": "Tarde para la ira",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Premios_Goya_2018_-_Ra%C3%BAl_Ar%C3%A9valo.jpg/330px-Premios_Goya_2018_-_Ra%C3%BAl_Ar%C3%A9valo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Juan Diego Botto",
+          "role": "Cine español",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Malaga_Film_Festival_2025_-_Juan_Diego_Botto-2_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Juan_Diego_Botto-2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        }
+      ]
     },
     {
-      "name": "Angelina Jolie",
-      "role": "Lara Croft (Tomb Raider)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Angelina_Jolie-643531_%28cropped%29.jpg/330px-Angelina_Jolie-643531_%28cropped%29.jpg"
-    },
-    {
-      "name": "Jennifer Lawrence",
-      "role": "Katniss Everdeen (Los Juegos del Hambre)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Jennifer_Lawrence_in_2018.png/330px-Jennifer_Lawrence_in_2018.png"
-    },
-    {
-      "name": "Natalie Portman",
-      "role": "Nina Sayers (El cisne negro)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/NataliePortman.jpg/330px-NataliePortman.jpg"
-    },
-    {
-      "name": "Margot Robbie",
-      "role": "Harley Quinn (DC)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg/330px-Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg"
-    },
-    {
-      "name": "Zendaya",
-      "role": "MJ (Spider-Man)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zendaya-byPhilipRomano.jpg/330px-Zendaya-byPhilipRomano.jpg"
-    },
-    {
-      "name": "Emma Stone",
-      "role": "Mia (La La Land)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Emma_Stone_at_the_2025_Venice_Film_Festival-6313_%28cropped%29.jpg/330px-Emma_Stone_at_the_2025_Venice_Film_Festival-6313_%28cropped%29.jpg"
-    },
-    {
-      "name": "Cate Blanchett",
-      "role": "Galadriel (El Señor de los Anillos)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cate_Blanchett-63298_%28cropped_2%29.jpg/330px-Cate_Blanchett-63298_%28cropped_2%29.jpg"
-    },
-    {
-      "name": "Viola Davis",
-      "role": "Aibileen (The Help)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg/330px-Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg"
-    },
-    {
-      "name": "Anne Hathaway",
-      "role": "Fantine (Los miserables)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg/330px-Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg"
-    },
-    {
-      "name": "Charlize Theron",
-      "role": "Furiosa (Mad Max: Fury Road)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/CharlizeTheron-byPhilipRomano.jpg/330px-CharlizeTheron-byPhilipRomano.jpg"
-    },
-    {
-      "name": "Emma Watson",
-      "role": "Hermione Granger (Harry Potter)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Emma_Watson_2013.jpg/330px-Emma_Watson_2013.jpg"
-    },
-    {
-      "name": "Keira Knightley",
-      "role": "Elizabeth Bennet (Orgullo y prejuicio)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Knightley_Bafta_2015_07.png/330px-Knightley_Bafta_2015_07.png"
-    },
-    {
-      "name": "Reese Witherspoon",
-      "role": "Elle Woods (Legalmente rubia)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Reese_Witherspoon_%2829144489784%29_%28cropped%29.jpg/330px-Reese_Witherspoon_%2829144489784%29_%28cropped%29.jpg"
-    },
-    {
-      "name": "Julia Roberts",
-      "role": "Vivian (Pretty Woman)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Julia_Roberts_2025.jpg/330px-Julia_Roberts_2025.jpg"
-    },
-    {
-      "name": "Sandra Bullock",
-      "role": "Leigh Anne (The Blind Side)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sandra_Bullock_at_The_Egyptian_Theatre_2024.jpg/330px-Sandra_Bullock_at_The_Egyptian_Theatre_2024.jpg"
-    },
-    {
-      "name": "Nicole Kidman",
-      "role": "Satine (Moulin Rouge)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/MKr384262_Nicole_Kidman_%28Women_In_Motion%2C_Cannes_2025%29.jpg/330px-MKr384262_Nicole_Kidman_%28Women_In_Motion%2C_Cannes_2025%29.jpg"
-    },
-    {
-      "name": "Amy Adams",
-      "role": "Giselle (Encantada)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg/330px-Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg"
-    },
-    {
-      "name": "Jessica Chastain",
-      "role": "Maya (La noche más oscura)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Jessica_Chastain-64631_%28cropped%29.jpg/330px-Jessica_Chastain-64631_%28cropped%29.jpg"
-    },
-    {
-      "name": "Brie Larson",
-      "role": "Ma (Room)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Captain_Marvel_trailer_at_the_National_Air_and_Space_Museum_4_%28cropped%29.jpg/330px-Captain_Marvel_trailer_at_the_National_Air_and_Space_Museum_4_%28cropped%29.jpg"
-    },
-    {
-      "name": "Saoirse Ronan",
-      "role": "Jo March (Mujercitas)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/MKr349648_Saoirse_Ronan_%28The_Outrun%2C_Berlinale_2024%29.jpg/330px-MKr349648_Saoirse_Ronan_%28The_Outrun%2C_Berlinale_2024%29.jpg"
-    },
-    {
-      "name": "Florence Pugh",
-      "role": "Amy March (Mujercitas)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Florence_Pugh_at_the_2024_Toronto_International_Film_Festival_13_%28cropped_2_%E2%80%93_color_adjusted%29.jpg/330px-Florence_Pugh_at_the_2024_Toronto_International_Film_Festival_13_%28cropped_2_%E2%80%93_color_adjusted%29.jpg"
-    },
-    {
-      "name": "Anya Taylor-Joy",
-      "role": "Beth Harmon (Gambito de dama)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Anya_Taylor-Joy_at_the_2025_Toronto_International_Film_Festival._06_%28cropped%29.jpg/330px-Anya_Taylor-Joy_at_the_2025_Toronto_International_Film_Festival._06_%28cropped%29.jpg"
-    },
-    {
-      "name": "Alicia Vikander",
-      "role": "Gerda (La chica danesa)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Alicia_Vikander-7756.jpg/330px-Alicia_Vikander-7756.jpg"
-    },
-    {
-      "name": "Elizabeth Olsen",
-      "role": "Wanda Maximoff (Marvel)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Elizabeth_Olsen_-_Los_Angeles_Comic_Con_2025.jpg/330px-Elizabeth_Olsen_-_Los_Angeles_Comic_Con_2025.jpg"
-    },
-    {
-      "name": "Gal Gadot",
-      "role": "Wonder Woman (DC)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gal_Gadot_by_Gage_Skidmore_3.jpg/330px-Gal_Gadot_by_Gage_Skidmore_3.jpg"
-    },
-    {
-      "name": "Ana de Armas",
-      "role": "Marta Cabrera (Knives Out)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg/330px-Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg"
-    },
-    {
-      "name": "Rachel McAdams",
-      "role": "Allie (El diario de Noah)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rachel_McAdams_-_Walk_of_Fame.jpg/330px-Rachel_McAdams_-_Walk_of_Fame.jpg"
-    },
-    {
-      "name": "Kate Winslet",
-      "role": "Rose (Titanic)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/KateWinslet_%28cropped%29.jpg/330px-KateWinslet_%28cropped%29.jpg"
-    },
-    {
-      "name": "Jennifer Connelly",
-      "role": "Alicia Nash (Una mente maravillosa)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jennifer_Connelly_2019_2.png/330px-Jennifer_Connelly_2019_2.png"
-    },
-    {
-      "name": "Michelle Williams",
-      "role": "Marilyn Monroe (My Week with Marilyn)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/MichelleWilliams-byPhilipRomano.jpg/330px-MichelleWilliams-byPhilipRomano.jpg"
-    },
-    {
-      "name": "Kristen Stewart",
-      "role": "Bella Swan (Crepúsculo)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kristen_Stewart_at_WWD_Style_Awards_2026.jpg/330px-Kristen_Stewart_at_WWD_Style_Awards_2026.jpg"
-    },
-    {
-      "name": "Salma Hayek",
-      "role": "Frida Kahlo (Frida)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/MKr383631_Salma_Hayek_%28Women_In_Motion%2C_Cannes_2025%29_crop.jpg/330px-MKr383631_Salma_Hayek_%28Women_In_Motion%2C_Cannes_2025%29_crop.jpg"
-    },
-    {
-      "name": "Halle Berry",
-      "role": "Leticia (Monster's Ball)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Halle_Berry-1910.jpg/330px-Halle_Berry-1910.jpg"
-    },
-    {
-      "name": "Zoe Saldana",
-      "role": "Neytiri (Avatar)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg"
-    },
-    {
-      "name": "Marion Cotillard",
-      "role": "Édith Piaf (La vida en rosa)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Marion_Cotillard_at_2019_Cannes.jpg/330px-Marion_Cotillard_at_2019_Cannes.jpg"
-    },
-    {
-      "name": "Léa Seydoux",
-      "role": "Madeleine Swann (Spectre)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/L%C3%A9a_Seydoux_Cannes_2016.jpg/330px-L%C3%A9a_Seydoux_Cannes_2016.jpg"
-    },
-    {
-      "name": "Monica Bellucci",
-      "role": "Persephone (Matrix Reloaded)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Monica_Bellucci-63654.jpg/330px-Monica_Bellucci-63654.jpg"
-    },
-    {
-      "name": "Penélope Cruz",
-      "role": "Raimunda (Volver)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Goyas_2024_-_Pen%C3%A9lope_Cruz-2_%28cropped%29.jpg/330px-Goyas_2024_-_Pen%C3%A9lope_Cruz-2_%28cropped%29.jpg"
-    },
-    {
-      "name": "Paz Vega",
-      "role": "Lucía (Lucía y el sexo)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Premios_Goya_2020_-_Paz_Vega_%28cropped%29.jpg/330px-Premios_Goya_2020_-_Paz_Vega_%28cropped%29.jpg"
-    },
-    {
-      "name": "Victoria Abril",
-      "role": "Ana (Átame)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Victoria_Abril_Cannes_2013.jpg/330px-Victoria_Abril_Cannes_2013.jpg"
-    },
-    {
-      "name": "Carmen Maura",
-      "role": "Pepa (Mujeres al borde de un ataque de nervios)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/M%C3%A1laga_Film_Festival_2026_-_Carmen_Maura_%28cropped%29.jpg/330px-M%C3%A1laga_Film_Festival_2026_-_Carmen_Maura_%28cropped%29.jpg"
-    },
-    {
-      "name": "Maribel Verdú",
-      "role": "Luisa (Y tu mamá también)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Goyas_2025_-_Maribel_Verd%C3%BA.jpg/330px-Goyas_2025_-_Maribel_Verd%C3%BA.jpg"
-    },
-    {
-      "name": "Elena Anaya",
-      "role": "Vera (La piel que habito)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Elena_Anaya_at_Berlin_Film_Festival_2026%2C_%28P1230468%29.jpg/330px-Elena_Anaya_at_Berlin_Film_Festival_2026%2C_%28P1230468%29.jpg"
-    },
-    {
-      "name": "Ariadna Gil",
-      "role": "Violeta (Belle Époque)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Goyas_2023_-_Sin_identificar_090.jpg/330px-Goyas_2023_-_Sin_identificar_090.jpg"
-    },
-    {
-      "name": "Aitana Sánchez-Gijón",
-      "role": "Nadie hablará de nosotras cuando hayamos muerto",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Goyas_2024_-_Aitana_S%C3%A1nchez-Gij%C3%B3n_%28cropped%29.jpg/330px-Goyas_2024_-_Aitana_S%C3%A1nchez-Gij%C3%B3n_%28cropped%29.jpg"
-    },
-    {
-      "name": "Pilar López de Ayala",
-      "role": "Juana I de Castilla (Juana la Loca)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Festival_de_M%C3%A1laga_2024_-_Pilar_L%C3%B3pez_de_Ayala_%28cropped%29.jpg/330px-Festival_de_M%C3%A1laga_2024_-_Pilar_L%C3%B3pez_de_Ayala_%28cropped%29.jpg"
-    },
-    {
-      "name": "Adriana Ugarte",
-      "role": "Vera (Durante la tormenta)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Adriana_Ugarte_2014.jpg/330px-Adriana_Ugarte_2014.jpg"
-    },
-    {
-      "name": "Belén Rueda",
-      "role": "Laura (El orfanato)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Festival_de_M%C3%A1laga_2024_-_Bel%C3%A9n_Rueda.jpg/330px-Festival_de_M%C3%A1laga_2024_-_Bel%C3%A9n_Rueda.jpg"
-    },
-    {
-      "name": "Clara Lago",
-      "role": "Carol (Ocho apellidos catalanes)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Clara_Lago_en_los_Premios_Goya_2017_%28cropped%29.jpg/330px-Clara_Lago_en_los_Premios_Goya_2017_%28cropped%29.jpg"
-    },
-    {
-      "name": "Úrsula Corberó",
-      "role": "Tokio (La casa de papel)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/%C3%9Arsula_Corber%C3%B3-65339.jpg/330px-%C3%9Arsula_Corber%C3%B3-65339.jpg"
-    },
-    {
-      "name": "Blanca Suárez",
-      "role": "Leticia (El internado)",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg"
+      "name": "Futbolistas más famosos",
+      "description": "Selección de futbolistas icónicos de la historia reciente. Fotos desde Wikimedia Commons.",
+      "actors": [
+        {
+          "name": "Lionel Messi",
+          "role": "Delantero · Argentina / Inter Miami",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg/330px-Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "role": "Delantero · Portugal / Al-Nassr",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg/330px-Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Neymar",
+          "role": "Delantero · Brasil",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/2025-02-12_-_Jogador_Neymar_joga_seu_primeiro_cl%C3%A1ssico_ap%C3%B3s_retorno_ao_futebol_brasileiro._Lance_de_jogo_entre_Corinthians_e_Santos_pelo_Campeonato_Paulista_%28cropped%29.jpg/330px-thumbnail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Kylian Mbappé",
+          "role": "Delantero · Francia / Real Madrid",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/330px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Erling Haaland",
+          "role": "Delantero · Noruega / Manchester City",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/330px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Robert Lewandowski",
+          "role": "Delantero · Polonia / Barcelona",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2019147183134_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0228_-_B70I8527_%28cropped%29.jpg/330px-2019147183134_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0228_-_B70I8527_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Karim Benzema",
+          "role": "Delantero · Francia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Karim_Benzema_Pick.jpg/330px-Karim_Benzema_Pick.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Zinedine Zidane",
+          "role": "Centrocampista · Francia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Zinedine_Zidane_by_Tasnim_03.jpg/330px-Zinedine_Zidane_by_Tasnim_03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ronaldinho",
+          "role": "Centrocampista · Brasil",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sports_Festival_2025_-_4_%28cropped%29.jpg/330px-Sports_Festival_2025_-_4_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Pelé",
+          "role": "Delantero · Brasil",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Pele_con_brasil_%28cropped%29.jpg/330px-Pele_con_brasil_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Diego Maradona",
+          "role": "Centrocampista · Argentina",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Argentina_celebrando_copa_%28cropped%29.jpg/330px-Argentina_celebrando_copa_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ronaldo Nazário",
+          "role": "Delantero · Brasil",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ronaldo_Lu%C3%ADs_Naz%C3%A1rio_de_Lima_2019_%283x4_cropped%29.jpg/330px-Ronaldo_Lu%C3%ADs_Naz%C3%A1rio_de_Lima_2019_%283x4_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Thierry Henry",
+          "role": "Delantero · Francia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Thierry_Henry_%2851649035951%29_%28cropped%29.jpg/330px-Thierry_Henry_%2851649035951%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "David Beckham",
+          "role": "Centrocampista · Inglaterra",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/David_Beckham_UNICEF_%28cropped2%29.jpg/330px-David_Beckham_UNICEF_%28cropped2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Luka Modrić",
+          "role": "Centrocampista · Croacia / Real Madrid",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Luka_Modric_Croatia_v_Portugal_2_July_2026-055.jpg/330px-Luka_Modric_Croatia_v_Portugal_2_July_2026-055.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "role": "Centrocampista · Bélgica / Manchester City",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/330px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Mohamed Salah",
+          "role": "Delantero · Egipto / Liverpool",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_%28cropped%29.jpg/330px-Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Virgil van Dijk",
+          "role": "Defensa · Países Bajos / Liverpool",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/20160604_AUT_NED_8876_%28cropped%29.jpg/330px-20160604_AUT_NED_8876_%28cropped%29.jpg"
+        },
+        {
+          "name": "Manuel Neuer",
+          "role": "Portero · Alemania / Bayern Múnich",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Manuel_Neuer_Ecuador_v_Germany_25_June_2026-148.jpg/330px-Manuel_Neuer_Ecuador_v_Germany_25_June_2026-148.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Gianluigi Buffon",
+          "role": "Portero · Italia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Norway_Italy_-_June_2025_A_44_%28Gianluigi_Buffon%29.jpg/330px-Norway_Italy_-_June_2025_A_44_%28Gianluigi_Buffon%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Iker Casillas",
+          "role": "Portero · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iker-Casillas-SportsTrade-2021-cropped.jpg/330px-Iker-Casillas-SportsTrade-2021-cropped.jpg"
+        },
+        {
+          "name": "Xavi Hernández",
+          "role": "Centrocampista · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Xavi%2C_Persepolis_vs._Al_Sadd%2C_20190520_02_%28cropped%29.jpg/330px-Xavi%2C_Persepolis_vs._Al_Sadd%2C_20190520_02_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "role": "Centrocampista · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Andr%C3%A9s_Iniesta_Argentina_v_Spain_19_July_2026-034_%28cropped%29.jpg/330px-Andr%C3%A9s_Iniesta_Argentina_v_Spain_19_July_2026-034_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Sergio Ramos",
+          "role": "Defensa · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sergio_Ramos_Interview_2021_%28cropped%29.jpg/330px-Sergio_Ramos_Interview_2021_%28cropped%29.jpg"
+        },
+        {
+          "name": "Gerard Piqué",
+          "role": "Defensa · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Gerard_Piqu%C3%A9_Euro_2012_vs_France_01.jpg/330px-Gerard_Piqu%C3%A9_Euro_2012_vs_France_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Fernando Torres",
+          "role": "Delantero · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Fernando_Torres_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+        },
+        {
+          "name": "David Villa",
+          "role": "Delantero · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Spain-Tahiti%2C_Confederations_Cup_2013_%2802%29_%28Villa_crop%29.jpg/330px-Spain-Tahiti%2C_Confederations_Cup_2013_%2802%29_%28Villa_crop%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Raúl González",
+          "role": "Delantero · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/25th_Laureus_World_Sports_Awards_-_Ra%C3%BAl_-_240422_132916-2_%28cropped%29.jpg/330px-25th_Laureus_World_Sports_Awards_-_Ra%C3%BAl_-_240422_132916-2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Álvaro Morata",
+          "role": "Delantero · España",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/%C3%81lvaro_Morata_in_2025.jpg/330px-%C3%81lvaro_Morata_in_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Pedri",
+          "role": "Centrocampista · España / Barcelona",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pedri_France_v_Spain_7.24.26-245.jpg/330px-Pedri_France_v_Spain_7.24.26-245.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Gavi",
+          "role": "Centrocampista · España / Barcelona",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Gavi_Argentina_v_Spain_19_July_2026-013.jpg/330px-Gavi_Argentina_v_Spain_19_July_2026-013.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Lamine Yamal",
+          "role": "Extremo · España / Barcelona",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/330px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Vinícius Júnior",
+          "role": "Extremo · Brasil / Real Madrid",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Vin%C3%ADcius_J%C3%BAnior_Brazil_V_Morocco_13_June_2026-207_%28cropped%29.jpg/330px-Vin%C3%ADcius_J%C3%BAnior_Brazil_V_Morocco_13_June_2026-207_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Jude Bellingham",
+          "role": "Centrocampista · Inglaterra / Real Madrid",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jude_Bellingham_England_v_Panama_27_June_26-160_%28cropped%29.jpg/330px-Jude_Bellingham_England_v_Panama_27_June_26-160_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Harry Kane",
+          "role": "Delantero · Inglaterra / Bayern Múnich",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/330px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Antoine Griezmann",
+          "role": "Delantero · Francia / Atlético de Madrid",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/FRA-ARG_%2810%29_%28cropped%29.jpg/330px-FRA-ARG_%2810%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Luis Suárez",
+          "role": "Delantero · Uruguay",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Luis_Su%C3%A1rez_2026_%28cropped%29.jpg/330px-Luis_Su%C3%A1rez_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Eden Hazard",
+          "role": "Extremo · Bélgica",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Eden_Hazard_at_Baku_before_2019_UEFA_Europe_League_Final.jpg/330px-Eden_Hazard_at_Baku_before_2019_UEFA_Europe_League_Final.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Paulo Dybala",
+          "role": "Delantero · Argentina",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg/330px-%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Gareth Bale",
+          "role": "Extremo · Gales",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/2022_FIFA_World_Cup_United_States_1%E2%80%931_Wales_-_%2832%29_%28cropped%29.jpg/330px-2022_FIFA_World_Cup_United_States_1%E2%80%931_Wales_-_%2832%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Steven Gerrard",
+          "role": "Centrocampista · Inglaterra",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Steven_Gerrard_2018.jpg/330px-Steven_Gerrard_2018.jpg"
+        },
+        {
+          "name": "Frank Lampard",
+          "role": "Centrocampista · Inglaterra",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Frank_Lampard_2019.jpg/330px-Frank_Lampard_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Andrea Pirlo",
+          "role": "Centrocampista · Italia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/20150616_-_Portugal_-_Italie_-_Gen%C3%A8ve_-_Andrea_Pirlo_%28cropped%29.jpg/330px-20150616_-_Portugal_-_Italie_-_Gen%C3%A8ve_-_Andrea_Pirlo_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Francesco Totti",
+          "role": "Delantero · Italia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/KL-2018_%284%29.jpg/330px-KL-2018_%284%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Kaká",
+          "role": "Centrocampista · Brasil",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Kak%C3%A1_visited_Stadium_St._Petersburg.jpg/330px-Kak%C3%A1_visited_Stadium_St._Petersburg.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Samuel Eto'o",
+          "role": "Delantero · Camerún",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sammuel_Eto%27o_Fils_02.jpg/330px-Sammuel_Eto%27o_Fils_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Didier Drogba",
+          "role": "Delantero · Costa de Marfil",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Didier_Drogba_%282019%29_%28cropped2%29.jpg/330px-Didier_Drogba_%282019%29_%28cropped2%29.jpg"
+        },
+        {
+          "name": "Wayne Rooney",
+          "role": "Delantero · Inglaterra",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Wayne_Rooney_%2850121495731%29_%28cropped%29.jpg/330px-Wayne_Rooney_%2850121495731%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Mesut Özil",
+          "role": "Centrocampista · Alemania",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Mesut_%C3%96zil_at_Baku_before_2019_UEFA_Europe_League_Final.jpg/330px-Mesut_%C3%96zil_at_Baku_before_2019_UEFA_Europe_League_Final.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "N'Golo Kanté",
+          "role": "Centrocampista · Francia",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/N%27Golo_Kante_France_v_Senegal_16_June_2026-397.jpg/330px-N%27Golo_Kante_France_v_Senegal_16_June_2026-397.jpg"
+        }
+      ]
     }
   ]
 }

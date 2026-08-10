@@ -11,16 +11,28 @@ const KEYS = {
   seedVersion: 'vm:seed_version',
 };
 
-import seedHollywood from '../../seeds/seed-hollywood.json';
+import seedData from '../../seeds/seed-hollywood.json';
 
 // Versión del seed. Subirla fuerza la regeneración del seed en navegadores
 // que ya tenían una versión anterior (sin tocar las categorías creadas a mano).
-// v2 = 53 actrices. v3 = 53 actrices con thumbnails de 330px (imágenes ligeras).
-const SEED_VERSION = 3;
+// v3 = actrices. v4 = actrices + actores + futbolistas.
+const SEED_VERSION = 4;
 const SEED_NAMES = [
   'Actrices más famosas de Hollywood',          // seed v1
-  'Actrices más famosas: Hollywood y España',  // seed v2
+  'Actrices más famosas: Hollywood y España',  // seed v2/v3
+  'Actores más famosos: Hollywood y España',   // seed v4
+  'Futbolistas más famosos',                   // seed v4
 ];
+
+function seedCategories() {
+  // Formato nuevo: { categories: [...] }
+  if (Array.isArray(seedData.categories)) return seedData.categories;
+  // Formato antiguo (compat): { category, actors }
+  if (seedData.category) {
+    return [{ ...seedData.category, actors: seedData.actors || [] }];
+  }
+  return [];
+}
 
 function read(key, fallback) {
   try {
@@ -49,27 +61,35 @@ function now() {
 //   (categorías con nombre conocido) y vuelve a sembrar. Conserva las categorías
 //   creadas a mano por el usuario.
 function plantSeed() {
-  const cats = read(KEYS.categories, []);
-  const catId = nextId(cats);
-  const category = {
-    id: catId,
-    name: seedHollywood.category.name,
-    description: seedHollywood.category.description,
-    created_at: now(),
-  };
-  write(KEYS.categories, [category, ...cats]);
+  let cats = read(KEYS.categories, []);
+  let actors = read(KEYS.actors, []);
+  const stamp = now();
 
-  const actors = read(KEYS.actors, []);
-  const base = nextId(actors);
-  const newActors = seedHollywood.actors.map((a, i) => ({
-    id: base + i,
-    category_id: catId,
-    name: a.name,
-    role: a.role ?? null,
-    photo_url: a.photo_url ?? null,
-    created_at: now(),
-  }));
-  write(KEYS.actors, [...newActors, ...actors]);
+  for (const seedCat of seedCategories()) {
+    const catId = nextId(cats);
+    cats = [
+      {
+        id: catId,
+        name: seedCat.name,
+        description: seedCat.description || null,
+        created_at: stamp,
+      },
+      ...cats,
+    ];
+    const base = nextId(actors);
+    const newActors = (seedCat.actors || []).map((a, i) => ({
+      id: base + i,
+      category_id: catId,
+      name: a.name,
+      role: a.role ?? null,
+      photo_url: a.photo_url ?? null,
+      created_at: stamp,
+    }));
+    actors = [...newActors, ...actors];
+  }
+
+  write(KEYS.categories, cats);
+  write(KEYS.actors, actors);
   write(KEYS.seedVersion, SEED_VERSION);
   write(KEYS.seeded, true);
 }
