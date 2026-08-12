@@ -12,6 +12,7 @@ const CATEGORIES = [
   {
     name: 'Actrices más famosas: Hollywood y España',
     description: 'Selección de actrices icónicas de Hollywood y del cine español. Fotos desde Wikimedia Commons.',
+    cover: 'Scarlett Johansson',
     actors: [
       // Hollywood
       { title: 'Meryl Streep', name: 'Meryl Streep', role: 'Miranda Priestly (El diablo viste de Prada)' },
@@ -73,6 +74,7 @@ const CATEGORIES = [
   {
     name: 'Actores más famosos: Hollywood y España',
     description: 'Selección de actores icónicos de Hollywood y del cine español. Fotos desde Wikimedia Commons.',
+    cover: 'Leonardo DiCaprio',
     actors: [
       // Hollywood / internacionales
       { title: 'Leonardo DiCaprio', name: 'Leonardo DiCaprio', role: 'Jack Dawson (Titanic)' },
@@ -134,6 +136,7 @@ const CATEGORIES = [
   {
     name: 'Futbolistas más famosos',
     description: 'Selección de futbolistas icónicos de la historia reciente. Fotos desde Wikimedia Commons.',
+    cover: 'Lamine Yamal',
     actors: [
       { title: 'Lionel Messi', name: 'Lionel Messi', role: 'Delantero · Argentina / Inter Miami' },
       { title: 'Cristiano Ronaldo', name: 'Cristiano Ronaldo', role: 'Delantero · Portugal / Al-Nassr' },
@@ -187,6 +190,63 @@ const CATEGORIES = [
       { title: 'N\'Golo Kanté', name: "N'Golo Kanté", role: 'Centrocampista · Francia' },
     ],
   },
+  {
+    name: 'Políticos españoles e históricos',
+    description: 'Políticos ordenados por fama y reconocimiento popular (histórica y mediática), con fechas de mandato.',
+    cover: 'Francisco Franco',
+    actors: [
+      { title: 'Francisco Franco', name: 'Francisco Franco', role: 'Dictador de España (1939–1975)' },
+      { title: 'Pedro Sánchez', name: 'Pedro Sánchez', role: 'Presidente del Gobierno · PSOE (2018–actualidad)' },
+      { title: 'Isabel Díaz Ayuso', name: 'Isabel Díaz Ayuso', role: 'Presidenta de la Comunidad de Madrid · PP (2019–actualidad)' },
+      { title: 'Santiago Abascal', name: 'Santiago Abascal', role: 'Presidente de Vox (2014–actualidad)' },
+      { title: 'Donald Trump', name: 'Donald Trump', role: 'Presidente de EE. UU. (2017–2021, 2025–actualidad)' },
+      { title: 'Vladimir Putin', name: 'Vladimir Putin', role: 'Presidente de Rusia (2000–2008, 2012–actualidad)' },
+      { title: 'Juan Carlos I', name: 'Juan Carlos I', role: 'Rey de España (1975–2014)' },
+      { title: 'Felipe VI', name: 'Felipe VI', role: 'Rey de España (2014–actualidad)' },
+      { title: 'José María Aznar', name: 'José María Aznar', role: 'Presidente del Gobierno · PP (1996–2004)' },
+      { title: 'Felipe González', name: 'Felipe González', role: 'Presidente del Gobierno · PSOE (1982–1996)' },
+      { title: 'Mariano Rajoy', name: 'Mariano Rajoy', role: 'Presidente del Gobierno · PP (2011–2018)' },
+      { title: 'José Luis Rodríguez Zapatero', name: 'José Luis Rodríguez Zapatero', role: 'Presidente del Gobierno · PSOE (2004–2011)' },
+      { title: 'Adolfo Suárez', name: 'Adolfo Suárez', role: 'Presidente del Gobierno · UCD (1976–1981)' },
+      { title: 'Alberto Núñez Feijóo', name: 'Alberto Núñez Feijóo', role: 'Presidente del PP (2022–actualidad)' },
+      { title: 'Pablo Iglesias Turrión', name: 'Pablo Iglesias', role: 'Vicepresidente del Gobierno · Podemos (2020–2021)' },
+      { title: 'Yolanda Díaz', name: 'Yolanda Díaz', role: 'Vicepresidenta del Gobierno · Sumar (2021–actualidad)' },
+      { title: 'Barack Obama', name: 'Barack Obama', role: 'Presidente de EE. UU. (2009–2017)' },
+      { title: 'Winston Churchill', name: 'Winston Churchill', role: 'Primer ministro del Reino Unido (1940–1945, 1951–1955)' },
+      { title: 'Volodymyr Zelenskyy', name: 'Volodímir Zelenski', role: 'Presidente de Ucrania (2019–actualidad)' },
+      { title: 'Carles Puigdemont', name: 'Carles Puigdemont', role: 'Expresidente de la Generalitat (2016–2017) · eurodiputado' },
+      { title: 'Emmanuel Macron', name: 'Emmanuel Macron', role: 'Presidente de Francia (2017–actualidad)' },
+      { title: 'Esperanza Aguirre', name: 'Esperanza Aguirre', role: 'Presidenta de la Comunidad de Madrid · PP (2003–2012)' },
+      { title: 'Ada Colau', name: 'Ada Colau', role: 'Alcaldesa de Barcelona (2015–2023)' },
+      { title: 'Irene Montero', name: 'Irene Montero', role: 'Ministra de Igualdad · Podemos (2020–2023)' },
+      { title: 'Albert Rivera', name: 'Albert Rivera', role: 'Presidente de Ciudadanos (2006–2019)' },
+      { title: 'Pablo Casado', name: 'Pablo Casado', role: 'Presidente del PP (2018–2022)' },
+      { title: 'Oriol Junqueras', name: 'Oriol Junqueras', role: 'Presidente de ERC (2011–actualidad)' },
+      { title: 'Gabriel Rufián', name: 'Gabriel Rufián', role: 'Diputado / portavoz de ERC (2016–actualidad)' },
+      { title: 'Inés Arrimadas', name: 'Inés Arrimadas', role: 'Presidenta de Ciudadanos (2019–2023)' },
+      { title: 'José Luis Martínez-Almeida', name: 'José Luis Martínez-Almeida', role: 'Alcalde de Madrid · PP (2019–actualidad)' },
+      { title: 'Juanma Moreno', name: 'Juanma Moreno', role: 'Presidente de Andalucía · PP (2019–actualidad)' },
+      { title: 'Manuela Carmena', name: 'Manuela Carmena', role: 'Alcaldesa de Madrid (2015–2019)' },
+      { title: 'Salvador Illa', name: 'Salvador Illa', role: 'Presidente de la Generalitat · PSC (2024–actualidad)' },
+      { title: 'Luis Carrero Blanco', name: 'Luis Carrero Blanco', role: 'Presidente del Gobierno · franquismo (1973)' },
+      { title: 'Miguel Primo de Rivera', name: 'Miguel Primo de Rivera', role: 'Dictador de España (1923–1930)' },
+      { title: 'José Antonio Primo de Rivera', name: 'José Antonio Primo de Rivera', role: 'Fundador de Falange (1933–1936)' },
+      { title: 'Manuel Fraga', name: 'Manuel Fraga', role: 'Ministro franquista · fundador de AP/PP' },
+      { title: 'Dolores Ibárruri', name: 'Dolores Ibárruri', role: 'Secretaria general del PCE (1942–1960)' },
+      { title: 'Manuel Azaña', name: 'Manuel Azaña', role: 'Presidente de la República (1936–1939)' },
+      { title: 'Santiago Carrillo', name: 'Santiago Carrillo', role: 'Secretario general del PCE (1960–1982)' },
+      { title: 'Alfonso Guerra', name: 'Alfonso Guerra', role: 'Vicepresidente del Gobierno · PSOE (1982–1991)' },
+      { title: 'Artur Mas', name: 'Artur Mas', role: 'Presidente de la Generalitat (2010–2016)' },
+      { title: 'Íñigo Errejón', name: 'Íñigo Errejón', role: 'Diputado · Más País / Sumar (2019–2023)' },
+      { title: 'Nadia Calviño', name: 'Nadia Calviño', role: 'Ministra de Economía (2018–2023) · Presidenta del BEI (2024–)' },
+      { title: 'Margarita Robles', name: 'Margarita Robles', role: 'Ministra de Defensa · PSOE (2018–actualidad)' },
+      { title: 'Teresa Ribera', name: 'Teresa Ribera', role: 'Vicepresidenta de la Comisión Europea (2024–actualidad)' },
+      { title: 'Mónica García', name: 'Mónica García', role: 'Ministra de Sanidad · Más Madrid (2023–actualidad)' },
+      { title: 'Emiliano García-Page', name: 'Emiliano García-Page', role: 'Presidente de Castilla-La Mancha · PSOE (2015–actualidad)' },
+      { title: 'Carlos Mazón', name: 'Carlos Mazón', role: 'Presidente de la Generalitat Valenciana · PP (2023–actualidad)' },
+      { title: 'Jorge Buxadé', name: 'Jorge Buxadé', role: 'Eurodiputado · Vox (2019–actualidad)' },
+    ],
+  },
 ];
 
 async function fetchPhotoUrl(title) {
@@ -229,6 +289,7 @@ async function buildSeed() {
     categories.push({
       name: cat.name,
       description: cat.description,
+      cover: cat.cover || null,
       actors: await resolveActors(cat.actors),
     });
   }

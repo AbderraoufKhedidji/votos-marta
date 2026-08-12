@@ -14,6 +14,7 @@ export const prerender = false;
 
 <script>
   import { listCategoriesWithVotes } from '../../lib/storage.js';
+  import { imgTag } from '../../lib/image.js';
 
   function escapeHtml(s) {
     return String(s ?? '').replace(/[&<>"']/g, (c) => ({
@@ -29,12 +30,17 @@ export const prerender = false;
       return;
     }
     el.innerHTML = cats.map((c) => `
-      <a href="/resultados/${c.id}" class="card p-5 hover:border-[var(--accent)] transition">
-        <h3 class="font-bold text-lg">${escapeHtml(c.name)}</h3>
-        ${c.description ? `<p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">${escapeHtml(c.description)}</p>` : ''}
-        <div class="flex gap-2 mt-3">
-          <span class="badge">${c.actor_count} actores</span>
-          <span class="badge">${c.vote_count} votos</span>
+      <a href="/resultados/${c.id}" class="card overflow-hidden hover:border-[var(--accent)] transition flex gap-0">
+        <div class="w-24 sm:w-28 flex-shrink-0 min-h-[8.5rem] self-stretch bg-[var(--panel-2)] overflow-hidden">
+          ${imgTag(c.cover_url, c.cover_name || c.name, { className: 'w-full h-full object-cover object-top' })}
+        </div>
+        <div class="p-4 flex flex-col justify-center min-w-0 flex-1">
+          <h3 class="font-bold text-lg leading-tight">${escapeHtml(c.name)}</h3>
+          ${c.description ? `<p class="text-[var(--muted)] text-sm mt-1 line-clamp-2">${escapeHtml(c.description)}</p>` : ''}
+          <div class="flex gap-2 mt-3 flex-wrap">
+            <span class="badge">${c.actor_count} actores</span>
+            <span class="badge">${c.vote_count} votos</span>
+          </div>
         </div>
       </a>
     `).join('');

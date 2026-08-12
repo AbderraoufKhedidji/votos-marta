@@ -269,7 +269,8 @@
           "role": "Leticia (El internado)",
           "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Blanca_Su%C3%A1rez_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
         }
-      ]
+      ],
+      "cover": "Scarlett Johansson"
     },
     {
       "name": "Actores más famosos: Hollywood y España",
@@ -540,7 +541,8 @@
           "role": "Cine español",
           "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Malaga_Film_Festival_2025_-_Juan_Diego_Botto-2_%28cropped%29.jpg/330px-Malaga_Film_Festival_2025_-_Juan_Diego_Botto-2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
         }
-      ]
+      ],
+      "cover": "Leonardo DiCaprio"
     },
     {
       "name": "Futbolistas más famosos",
@@ -796,7 +798,265 @@
           "role": "Centrocampista · Francia",
           "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/N%27Golo_Kante_France_v_Senegal_16_June_2026-397.jpg/330px-N%27Golo_Kante_France_v_Senegal_16_June_2026-397.jpg"
         }
-      ]
+      ],
+      "cover": "Lamine Yamal"
+    },
+    {
+      "name": "Políticos españoles e históricos",
+      "description": "Políticos ordenados por fama y reconocimiento popular (histórica y mediática), con fechas de mandato.",
+      "actors": [
+        {
+          "name": "Francisco Franco",
+          "role": "Dictador de España (1939–1975)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Francisco_Franco_posed_portrait_photograph.jpg/330px-Francisco_Franco_posed_portrait_photograph.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Pedro Sánchez",
+          "role": "Presidente del Gobierno · PSOE (2018–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Pedro_S%C3%A1nchez_in_2026.jpg/330px-Pedro_S%C3%A1nchez_in_2026.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Isabel Díaz Ayuso",
+          "role": "Presidenta de la Comunidad de Madrid · PP (2019–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/25th_Laureus_World_Sports_Awards_-_Red_Carpet_-_Isabel_D%C3%ADaz_Ayuso_-_240422_193809_%28cropped%29.jpg/330px-25th_Laureus_World_Sports_Awards_-_Red_Carpet_-_Isabel_D%C3%ADaz_Ayuso_-_240422_193809_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Santiago Abascal",
+          "role": "Presidente de Vox (2014–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Santiago_Abascal_%2854349274173%29_%28cropped%29.jpg/330px-Santiago_Abascal_%2854349274173%29_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Donald Trump",
+          "role": "Presidente de EE. UU. (2017–2021, 2025–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/June_2026_Official_Portrait_of_Donald_J._Trump_by_Daniel_Torok_%28cropped_2%29.jpg/330px-June_2026_Official_Portrait_of_Donald_J._Trump_by_Daniel_Torok_%28cropped_2%29.jpg"
+        },
+        {
+          "name": "Vladimir Putin",
+          "role": "Presidente de Rusia (2000–2008, 2012–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29_2.jpg/330px-%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Juan Carlos I",
+          "role": "Rey de España (1975–2014)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Ministru_prezidents_Valdis_Dombrovskis_ofici%C4%81l%C4%81s_pusdien%C4%81s_tiekas_ar_Sp%C4%81nijas_karali_Huanu_Karlosu_I_un_karalieni_Sofiju_%283506936051%29_%28cropped%29.jpg/330px-Ministru_prezidents_Valdis_Dombrovskis_ofici%C4%81l%C4%81s_pusdien%C4%81s_tiekas_ar_Sp%C4%81nijas_karali_Huanu_Karlosu_I_un_karalieni_Sofiju_%283506936051%29_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Felipe VI",
+          "role": "Rey de España (2014–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Daiga_Mieri%C5%86a_tiekas_ar_Sp%C4%81nijas_karali_-_53814974005_%28cropped%29-2.jpg/330px-Daiga_Mieri%C5%86a_tiekas_ar_Sp%C4%81nijas_karali_-_53814974005_%28cropped%29-2.jpg"
+        },
+        {
+          "name": "José María Aznar",
+          "role": "Presidente del Gobierno · PP (1996–2004)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Aznar_Kyriakides_2020_%28cropped%29.jpg/330px-Aznar_Kyriakides_2020_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Felipe González",
+          "role": "Presidente del Gobierno · PSOE (1982–1996)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Felipe_Gonz%C3%A1lez_%282012%29-2.jpg/330px-Felipe_Gonz%C3%A1lez_%282012%29-2.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Mariano Rajoy",
+          "role": "Presidente del Gobierno · PP (2011–2018)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mariano_Rajoy_in_2018.jpg/330px-Mariano_Rajoy_in_2018.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "José Luis Rodríguez Zapatero",
+          "role": "Presidente del Gobierno · PSOE (2004–2011)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero_en_el_III_Foro_Mundial_de_Derechos_Humanos_2023_%28cropped%29.jpg/330px-Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero_en_el_III_Foro_Mundial_de_Derechos_Humanos_2023_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Adolfo Suárez",
+          "role": "Presidente del Gobierno · UCD (1976–1981)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Adolfo_Su%C3%A1rez_1979c_%28cropped%29.jpg/330px-Adolfo_Su%C3%A1rez_1979c_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Alberto Núñez Feijóo",
+          "role": "Presidente del PP (2022–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/ALBERTO_N%C3%9A%C3%91EZ_FEIJ%C3%93O.jpg/330px-ALBERTO_N%C3%9A%C3%91EZ_FEIJ%C3%93O.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Pablo Iglesias",
+          "role": "Vicepresidente del Gobierno · Podemos (2020–2021)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pablo_Iglesias_en_agosto_2025_4_%28cropped%29.jpg/330px-Pablo_Iglesias_en_agosto_2025_4_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Yolanda Díaz",
+          "role": "Vicepresidenta del Gobierno · Sumar (2021–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/A90Q3891.jpg_%28cropped%29.jpg/330px-A90Q3891.jpg_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Barack Obama",
+          "role": "Presidente de EE. UU. (2009–2017)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/330px-President_Barack_Obama.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Winston Churchill",
+          "role": "Primer ministro del Reino Unido (1940–1945, 1951–1955)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/330px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Volodímir Zelenski",
+          "role": "Presidente de Ucrania (2019–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Volodymyr_Zelensky_2022_official_portrait_%28cropped%29.jpg/330px-Volodymyr_Zelensky_2022_official_portrait_%28cropped%29.jpg"
+        },
+        {
+          "name": "Carles Puigdemont",
+          "role": "Expresidente de la Generalitat (2016–2017) · eurodiputado",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Carles_Puigdemont_2024.jpg/330px-Carles_Puigdemont_2024.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Emmanuel Macron",
+          "role": "Presidente de Francia (2017–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Emmanuel_Macron_2025_%28cropped%29.jpg/330px-Emmanuel_Macron_2025_%28cropped%29.jpg"
+        },
+        {
+          "name": "Esperanza Aguirre",
+          "role": "Presidenta de la Comunidad de Madrid · PP (2003–2012)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Esperanza_Aguirre_2015e_%28cropped%29.jpg/330px-Esperanza_Aguirre_2015e_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Ada Colau",
+          "role": "Alcaldesa de Barcelona (2015–2023)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Ada_Colau%2C_2022.jpg/330px-Ada_Colau%2C_2022.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Irene Montero",
+          "role": "Ministra de Igualdad · Podemos (2020–2023)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/1718718544528_20240612_MONTERO_Irene_ES_006.jpg/330px-1718718544528_20240612_MONTERO_Irene_ES_006.jpg"
+        },
+        {
+          "name": "Albert Rivera",
+          "role": "Presidente de Ciudadanos (2006–2019)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Albert_Rivera_in_2019_%28cropped%29.jpg/330px-Albert_Rivera_in_2019_%28cropped%29.jpg"
+        },
+        {
+          "name": "Pablo Casado",
+          "role": "Presidente del PP (2018–2022)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Pablo_Casado.png/330px-Pablo_Casado.png?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Oriol Junqueras",
+          "role": "Presidente de ERC (2011–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Oriol_Junqueras_a_Terrassa_2021_%28cropped%29.jpg/330px-Oriol_Junqueras_a_Terrassa_2021_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Gabriel Rufián",
+          "role": "Diputado / portavoz de ERC (2016–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gabriel_Rufi%C3%A1n_Portavoz_de_Esquerra_Republicana_en_el_Congreso_de_los_diputados_%28cropped%29.jpg/330px-Gabriel_Rufi%C3%A1n_Portavoz_de_Esquerra_Republicana_en_el_Congreso_de_los_diputados_%28cropped%29.jpg"
+        },
+        {
+          "name": "Inés Arrimadas",
+          "role": "Presidenta de Ciudadanos (2019–2023)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/In%C3%A9s_Arrimadas_%28cropped%29.jpg/330px-In%C3%A9s_Arrimadas_%28cropped%29.jpg"
+        },
+        {
+          "name": "José Luis Martínez-Almeida",
+          "role": "Alcalde de Madrid · PP (2019–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/%28Jos%C3%A9_Luis_Mart%C3%ADnez-Almeida%29._Pablo_Casado_asiste_a_la_tradicional_cena_de_Navidad_del_PP_de_Madrid._%2845487287025%29._Diciembre_de_2018_%28cropped%29.jpg/330px-%28Jos%C3%A9_Luis_Mart%C3%ADnez-Almeida%29._Pablo_Casado_asiste_a_la_tradicional_cena_de_Navidad_del_PP_de_Madrid._%2845487287025%29._Diciembre_de_2018_%28cropped%29.jpg"
+        },
+        {
+          "name": "Juanma Moreno",
+          "role": "Presidente de Andalucía · PP (2019–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Juanma_Moreno_-_Presidente_de_la_Junta_de_Andaluc%C3%ADa_-_2025.jpg/330px-Juanma_Moreno_-_Presidente_de_la_Junta_de_Andaluc%C3%ADa_-_2025.jpg"
+        },
+        {
+          "name": "Manuela Carmena",
+          "role": "Alcaldesa de Madrid (2015–2019)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Manuela_Carmena_2019.jpg/330px-Manuela_Carmena_2019.jpg"
+        },
+        {
+          "name": "Salvador Illa",
+          "role": "Presidente de la Generalitat · PSC (2024–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Salvador_Illa_i_Roca%2C_President_de_la_Generalitat_de_Catalunya_%28cropped%29.png/330px-Salvador_Illa_i_Roca%2C_President_de_la_Generalitat_de_Catalunya_%28cropped%29.png"
+        },
+        {
+          "name": "Luis Carrero Blanco",
+          "role": "Presidente del Gobierno · franquismo (1973)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Luis_Carrero_Blanco.jpg/330px-Luis_Carrero_Blanco.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Miguel Primo de Rivera",
+          "role": "Dictador de España (1923–1930)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Miguel_Primo_de_Rivera%2C_Kaulak_%28cropped%29.jpg/330px-Miguel_Primo_de_Rivera%2C_Kaulak_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "José Antonio Primo de Rivera",
+          "role": "Fundador de Falange (1933–1936)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/FOTOGRAFIA_DE_JOSE_ANTONIO_PRIMO_DE_RIVERA_2.jpg/330px-FOTOGRAFIA_DE_JOSE_ANTONIO_PRIMO_DE_RIVERA_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Manuel Fraga",
+          "role": "Ministro franquista · fundador de AP/PP",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Mr._Manuel_Fraga_Iribarne_%28Spaanse_minister%29%2C_Bestanddeelnr_914-8477_%28cropped%29.jpg/330px-Mr._Manuel_Fraga_Iribarne_%28Spaanse_minister%29%2C_Bestanddeelnr_914-8477_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Dolores Ibárruri",
+          "role": "Secretaria general del PCE (1942–1960)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Dolores002.jpg/330px-Dolores002.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Manuel Azaña",
+          "role": "Presidente de la República (1936–1939)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Manuel_Aza%C3%B1a_cropped.jpg/330px-Manuel_Aza%C3%B1a_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Santiago Carrillo",
+          "role": "Secretario general del PCE (1960–1982)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Santiago_Carrillo_003.jpg/330px-Santiago_Carrillo_003.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Alfonso Guerra",
+          "role": "Vicepresidente del Gobierno · PSOE (1982–1991)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Alfonso_Guerra_con_los_ministros_de_Asuntos_Exteriores%2C_Cultura_y_Agricultura%2C_en_el_Congreso_de_los_Diputados_%28cropped%29.jpeg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+        },
+        {
+          "name": "Artur Mas",
+          "role": "Presidente de la Generalitat (2010–2016)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Artur_Mas_-_Fotografia_oficial.jpg/330px-Artur_Mas_-_Fotografia_oficial.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Íñigo Errejón",
+          "role": "Diputado · Más País / Sumar (2019–2023)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/%C3%8D%C3%B1igo_Errej%C3%B3n_2019a.png/330px-%C3%8D%C3%B1igo_Errej%C3%B3n_2019a.png?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        },
+        {
+          "name": "Nadia Calviño",
+          "role": "Ministra de Economía (2018–2023) · Presidenta del BEI (2024–)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Nadia_Calvi%C3%B1o%2C_President_of_the_European_Investment_Bank_-_2024.jpg/330px-Nadia_Calvi%C3%B1o%2C_President_of_the_European_Investment_Bank_-_2024.jpg"
+        },
+        {
+          "name": "Margarita Robles",
+          "role": "Ministra de Defensa · PSOE (2018–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Margarita_Robles_2023_%28cropped%29.jpg/330px-Margarita_Robles_2023_%28cropped%29.jpg"
+        },
+        {
+          "name": "Teresa Ribera",
+          "role": "Vicepresidenta de la Comisión Europea (2024–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ribera_EC_Portrait_2024_%28cropped%29.jpg/330px-Ribera_EC_Portrait_2024_%28cropped%29.jpg"
+        },
+        {
+          "name": "Mónica García",
+          "role": "Ministra de Sanidad · Más Madrid (2023–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/M%C3%B3nica_Garc%C3%ADa_2023_%28cropped%29.jpg/330px-M%C3%B3nica_Garc%C3%ADa_2023_%28cropped%29.jpg"
+        },
+        {
+          "name": "Emiliano García-Page",
+          "role": "Presidente de Castilla-La Mancha · PSOE (2015–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Emiliano_Garc%C3%ADa-Page_2023_%28cropped%29.jpg/330px-Emiliano_Garc%C3%ADa-Page_2023_%28cropped%29.jpg"
+        },
+        {
+          "name": "Carlos Mazón",
+          "role": "Presidente de la Generalitat Valenciana · PP (2023–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Carlos_Maz%C3%B3n_2025b_%28cropped%29.jpg/330px-Carlos_Maz%C3%B3n_2025b_%28cropped%29.jpg"
+        },
+        {
+          "name": "Jorge Buxadé",
+          "role": "Eurodiputado · Vox (2019–actualidad)",
+          "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/MEP_Jorge_Buxad%C3%A9_Villalba.jpg/330px-MEP_Jorge_Buxad%C3%A9_Villalba.jpg"
+        }
+      ],
+      "cover": "Francisco Franco"
     }
   ]
 }

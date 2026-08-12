@@ -15,13 +15,14 @@ import seedData from '../../seeds/seed-hollywood.json';
 
 // Versión del seed. Subirla fuerza la regeneración del seed en navegadores
 // que ya tenían una versión anterior (sin tocar las categorías creadas a mano).
-// v3 = actrices. v4 = actrices + actores + futbolistas.
-const SEED_VERSION = 4;
+// v9 = orden por popularidad. v10 = criterio de fama real (Franco arriba, etc.).
+const SEED_VERSION = 10;
 const SEED_NAMES = [
   'Actrices más famosas de Hollywood',          // seed v1
   'Actrices más famosas: Hollywood y España',  // seed v2/v3
   'Actores más famosos: Hollywood y España',   // seed v4
   'Futbolistas más famosos',                   // seed v4
+  'Políticos españoles e históricos',          // seed v5
 ];
 
 function seedCategories() {
@@ -67,11 +68,16 @@ function plantSeed() {
 
   for (const seedCat of seedCategories()) {
     const catId = nextId(cats);
+    const coverActor = (seedCat.actors || []).find((a) => a.name === seedCat.cover && a.photo_url)
+      || (seedCat.actors || []).find((a) => a.photo_url)
+      || null;
     cats = [
       {
         id: catId,
         name: seedCat.name,
         description: seedCat.description || null,
+        cover_name: seedCat.cover || coverActor?.name || null,
+        cover_url: coverActor?.photo_url || null,
         created_at: stamp,
       },
       ...cats,
@@ -83,7 +89,8 @@ function plantSeed() {
       name: a.name,
       role: a.role ?? null,
       photo_url: a.photo_url ?? null,
-      created_at: stamp,
+      // timestamps decrecientes para preservar el orden del seed al ordenar por created_at DESC
+      created_at: new Date(Date.parse(stamp) - i * 1000).toISOString(),
     }));
     actors = [...newActors, ...actors];
   }
@@ -125,6 +132,16 @@ export function seedIfEmpty() {
 }
 
 // --- Categorías ---
+function resolveCoverUrl(cat, actors) {
+  if (cat.cover_url) return cat.cover_url;
+  const catActors = actors.filter((a) => a.category_id === cat.id);
+  if (cat.cover_name) {
+    const match = catActors.find((a) => a.name === cat.cover_name && a.photo_url);
+    if (match) return match.photo_url;
+  }
+  return catActors.find((a) => a.photo_url)?.photo_url ?? null;
+}
+
 export function listCategories() {
   seedIfEmpty();
   const cats = read(KEYS.categories, []);
@@ -132,6 +149,7 @@ export function listCategories() {
   return cats
     .map((c) => ({
       ...c,
+      cover_url: resolveCoverUrl(c, actors),
       actor_count: actors.filter((a) => a.category_id === c.id).length,
     }))
     .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
@@ -149,6 +167,7 @@ export function listCategoriesWithVotes() {
       const vote_count = votes.filter((v) => actorIds.has(v.actor_id)).length;
       return {
         ...c,
+        cover_url: resolveCoverUrl(c, actors),
         actor_count: catActors.length,
         vote_count,
       };
